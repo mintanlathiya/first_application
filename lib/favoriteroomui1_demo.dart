@@ -56,7 +56,7 @@ class FavoriteRoom1 extends StatelessWidget {
             padding: const EdgeInsets.all(15),
             child: Container(
               height: 400,
-              width: 650,
+              width: 800,
               decoration: const BoxDecoration(
                   color: Color.fromARGB(246, 248, 248, 248),
                   image: DecorationImage(

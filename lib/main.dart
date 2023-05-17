@@ -1,6 +1,5 @@
+import 'package:first_application/weekinparis_demo.dart';
 import 'package:flutter/material.dart';
-
-import 'favoriteroomui1_demo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FavoriteRoom1(),
+      home: WeekInParisUi(),
     );
   }
 }
