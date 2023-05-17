@@ -54,7 +54,10 @@ class FavoriteRoom1 extends StatelessWidget {
           Container(
             height: 400,
             width: 500,
-            color: Colors.blue,
+            decoration: const BoxDecoration(
+                color: Colors.white,
+                image:
+                    DecorationImage(image: AssetImage('asset/images/2.jpeg'))),
           ),
           Container(
             height: 200,
@@ -64,22 +67,33 @@ class FavoriteRoom1 extends StatelessWidget {
           Stack(
             children: [
               Container(
+                padding: const EdgeInsets.only(right: 20, top: 4),
                 height: 40,
-                width: 150,
+                width: 140,
                 decoration: const BoxDecoration(
-                  color: Colors.blue,
+                  color: Color.fromARGB(255, 184, 195, 206),
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
                 alignment: Alignment.centerRight,
-                child: const Text('OFF'),
+                child: const Text(
+                  'OFF',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-              Container(
-                height: 38,
-                width: 80,
-                decoration: const BoxDecoration(
-                    color: Colors.brown,
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: const Text('ON'),
+              Padding(
+                padding: const EdgeInsets.all(2),
+                child: Container(
+                  padding: const EdgeInsets.only(left: 25, top: 10),
+                  height: 38,
+                  width: 80,
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 131, 78, 60),
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: const Text(
+                    'ON',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ),
             ],
           )
