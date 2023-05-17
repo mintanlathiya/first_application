@@ -5,11 +5,20 @@ class FavoriteRoom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         children: [
-          Image(
-            image: AssetImage('assets/images/1.jpeg'),
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/1.jpeg'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            // child: const Image(
+            //   fit: BoxFit.cover,
+            //   image: AssetImage('assets/images/1.jpeg'),
+            // ),
           ),
           // Container(
           //   height: 500,
