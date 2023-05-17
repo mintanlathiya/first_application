@@ -61,21 +61,28 @@ class FavoriteRoom1 extends StatelessWidget {
             width: 600,
             color: Colors.pink,
           ),
-          Container(
-            height: 30,
-            width: 70,
-            color: Colors.blue,
-            child: Row(
-              children: [
-                Container(
-                  height: 20,
-                  width: 50,
-                  color: Colors.amber,
+          Stack(
+            children: [
+              Container(
+                height: 40,
+                width: 150,
+                decoration: const BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
-                const Text('off')
-              ],
-            ),
-          ),
+                alignment: Alignment.centerRight,
+                child: const Text('OFF'),
+              ),
+              Container(
+                height: 38,
+                width: 80,
+                decoration: const BoxDecoration(
+                    color: Colors.brown,
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                child: const Text('ON'),
+              ),
+            ],
+          )
         ],
       ),
       bottomNavigationBar: Container(
