@@ -22,7 +22,7 @@ class FavoriteRoom1 extends StatelessWidget {
           )
         ],
         bottom: const PreferredSize(
-            preferredSize: Size(double.infinity, 80),
+            preferredSize: Size(double.infinity, 75),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -48,27 +48,52 @@ class FavoriteRoom1 extends StatelessWidget {
                 ),
               ],
             )),
+        elevation: 2,
       ),
       body: Column(
         children: [
-          Container(
-            height: 400,
-            width: 500,
-            decoration: const BoxDecoration(
-                color: Colors.white,
-                image:
-                    DecorationImage(image: AssetImage('asset/images/2.jpeg'))),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: Container(
+              height: 400,
+              width: 650,
+              decoration: const BoxDecoration(
+                  color: Color.fromARGB(246, 248, 248, 248),
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/2.jpeg'),
+                  )),
+            ),
           ),
-          Container(
-            height: 200,
-            width: 600,
-            color: Colors.pink,
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                children: [Text('Speed')],
+              ),
+            ],
+          ),
+          const Divider(
+            color: Colors.brown,
+            thickness: 5,
+            indent: 70,
+            endIndent: 70,
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text('Low'),
+              Text('Mid'),
+              Text('High'),
+            ],
+          ),
+          const SizedBox(
+            height: 70,
           ),
           Stack(
             children: [
               Container(
                 padding: const EdgeInsets.only(right: 20, top: 4),
-                height: 40,
+                height: 45,
                 width: 140,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 184, 195, 206),
@@ -84,7 +109,7 @@ class FavoriteRoom1 extends StatelessWidget {
                 padding: const EdgeInsets.all(2),
                 child: Container(
                   padding: const EdgeInsets.only(left: 25, top: 10),
-                  height: 38,
+                  height: 40,
                   width: 80,
                   decoration: const BoxDecoration(
                       color: Color.fromARGB(255, 131, 78, 60),
