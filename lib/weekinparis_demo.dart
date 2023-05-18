@@ -12,15 +12,24 @@ class WeekInParisUi extends StatelessWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(Icons.sort),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Icon(Icons.search),
+                  padding: EdgeInsets.only(left: 25),
+                  child: Icon(
+                    Icons.sort,
+                    size: 50,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 25),
+                  child: Icon(
+                    Icons.search,
+                    size: 50,
+                  ),
                 ),
               ],
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 15),
+              padding: EdgeInsets.only(left: 25),
               child: Row(
                 children: [
                   Text(
@@ -28,13 +37,13 @@ class WeekInParisUi extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 50,
                         fontWeight: FontWeight.bold,
-                        color: Colors.pink),
+                        color: Colors.purple),
                   ),
                 ],
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 15),
+              padding: EdgeInsets.only(left: 25),
               child: Row(
                 children: [
                   Text('2021 fashion show in Pairs'),
@@ -42,7 +51,7 @@ class WeekInParisUi extends StatelessWidget {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 15),
+              padding: EdgeInsets.only(left: 25, top: 18),
               child: Row(
                 children: [
                   Expanded(
@@ -58,6 +67,7 @@ class WeekInParisUi extends StatelessWidget {
                     padding: EdgeInsets.all(8.0),
                     child: Icon(
                       Icons.info_sharp,
+                      size: 40,
                     ),
                   )
                 ],
@@ -91,50 +101,73 @@ class WeekInParisUi extends StatelessWidget {
                 children: [
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         height: 300,
                         width: 250,
                         decoration: const BoxDecoration(
                             color: Colors.green,
-                             image: DecorationImage(image: AssetImage('assets/images/3.jpeg')),
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/3.jpeg'),
+                                fit: BoxFit.cover),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),
                       ),
-                      const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Niketa William'),
-                        ],
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Niketa William',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
                       ),
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text('Paris'),
-                        ],
+                      const Padding(
+                        padding: EdgeInsets.only(left: 8),
+                        child: Row(
+                          children: [
+                            Text('Paris'),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         height: 300,
                         width: 250,
                         decoration: const BoxDecoration(
                             color: Colors.green,
-                             image: DecorationImage(
-                                image: AssetImage('assets/images/4.jpeg')),
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/4.jpeg'),
+                                fit: BoxFit.fill),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),
                       ),
-                      const Text('Trisha Louis'),
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('London'),
-                        ],
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Trisha Louis',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 8),
+                        child: Row(
+                          children: [
+                            Text('London'),
+                          ],
+                        ),
                       ),
                     ],
                   )
@@ -147,8 +180,9 @@ class WeekInParisUi extends StatelessWidget {
               width: 540,
               decoration: const BoxDecoration(
                   color: Colors.green,
-                   image: DecorationImage(
-                      image: AssetImage('assets/images/5.jpeg')),
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/5.jpeg'),
+                      fit: BoxFit.fill),
                   borderRadius: BorderRadius.all(Radius.circular(20))),
             ),
           ],
