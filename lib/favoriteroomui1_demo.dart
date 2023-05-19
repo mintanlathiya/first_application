@@ -48,35 +48,141 @@ class FavoriteRoom1 extends StatelessWidget {
                 ),
               ],
             )),
-        elevation: 2,
       ),
       body: Column(
         children: [
+          const Stack(
+            children: [
+              Divider(
+                color: Colors.brown,
+                thickness: 2,
+                indent: 70,
+                endIndent: 70,
+              ),
+              Divider(
+                color: Colors.brown,
+                thickness: 5,
+                indent: 70,
+                endIndent: 490,
+              ),
+            ],
+          ),
           Padding(
-            padding: const EdgeInsets.all(15),
-            child: Container(
-              height: 400,
-              width: 800,
-              decoration: const BoxDecoration(
-                  color: Color.fromARGB(246, 248, 248, 248),
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/2.jpeg'),
-                  )),
+            padding: const EdgeInsets.symmetric(vertical: 40),
+            child: Row(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 130),
+                  child: Icon(Icons.add),
+                ),
+                Stack(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(30),
+                      padding: const EdgeInsets.all(30),
+                      height: 240,
+                      width: 240,
+                      decoration: BoxDecoration(
+                          color: Colors.black54,
+                          border: Border.all(
+                            color: Colors.yellow.shade200,
+                            strokeAlign: 30,
+                            width: 2,
+                          ),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(240))),
+                      child: Container(
+                        margin: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(30),
+                        decoration: BoxDecoration(
+                            color: Colors.black26,
+                            border: Border.all(
+                              strokeAlign: 20,
+                              width: 2,
+                            ),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(240))),
+                        child: Container(
+                          margin: const EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(30),
+                          decoration: BoxDecoration(
+                              color: Colors.black54,
+                              border: Border.all(
+                                strokeAlign: 30,
+                                width: 2,
+                              ),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(240))),
+                          child: Container(
+                            margin: const EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(30),
+                            decoration: BoxDecoration(
+                                color: Colors.black,
+                                border: Border.all(
+                                  strokeAlign: 20,
+                                  width: 2,
+                                ),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(240))),
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  '16°',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 35,
+                                  ),
+                                ),
+                                Text(
+                                  'c',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const Icon(Icons.minimize),
+              ],
             ),
           ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Column(
-                children: [Text('Speed')],
-              ),
+              Text('Speed'),
             ],
           ),
-          const Divider(
-            color: Colors.brown,
-            thickness: 5,
-            indent: 70,
-            endIndent: 70,
+          const Stack(
+            children: [
+              Divider(
+                color: Colors.brown,
+                thickness: 2,
+                indent: 70,
+                endIndent: 70,
+              ),
+              Divider(
+                color: Colors.brown,
+                thickness: 5,
+                indent: 70,
+                endIndent: 300,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 315),
+                child: CircleAvatar(
+                  backgroundColor: Colors.brown,
+                  radius: 8,
+                ),
+              )
+            ],
           ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

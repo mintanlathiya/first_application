@@ -32,13 +32,12 @@ class FavoriteRoom extends StatelessWidget {
                 Container(
                   height: 400,
                   width: 650,
-                  padding: const EdgeInsets.all(30),
+                  padding: const EdgeInsets.all(50),
                   margin: const EdgeInsets.only(top: 470),
                   decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(40))),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
@@ -50,11 +49,13 @@ class FavoriteRoom extends StatelessWidget {
                           'Smart home with facilities of smart devices in '),
                       const Text('Each room with intelligent system.'),
                       Container(
-                        height: 230,
-                        width: 630,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
+                        height: 220,
+                        width: 650,
+                        margin: const EdgeInsets.all(5),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 10,
                         ),
+                        decoration: const BoxDecoration(),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -90,6 +91,9 @@ class FavoriteRoom extends StatelessWidget {
                                   ],
                                 ),
                               ],
+                            ),
+                            const SizedBox(
+                              width: 150,
                             ),
                             const Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
