@@ -84,14 +84,18 @@ class VerificationUiDemo extends StatelessWidget {
           ),
           Row(
             children: [
-              Container(
-                margin: const EdgeInsets.all(25),
-                height: 250,
-                width: 550,
-                decoration: const BoxDecoration(
-                    color: Colors.amber,
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/8.jpeg'))),
+              Stack(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(25),
+                    height: 250,
+                    width: 550,
+                    decoration: const BoxDecoration(
+                        color: Colors.amber,
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/8.jpeg'))),
+                  ),
+                ],
               ),
             ],
           ),
