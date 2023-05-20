@@ -92,7 +92,7 @@ class DeliciousFood extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
                   child: const Icon(
-                    Icons.shopping_cart,
+                    Icons.cake_rounded,
                     size: 27,
                   ),
                 ),
@@ -104,7 +104,7 @@ class DeliciousFood extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
                   child: const Icon(
-                    Icons.shopping_cart,
+                    Icons.local_drink,
                     size: 27,
                   ),
                 ),
@@ -116,7 +116,7 @@ class DeliciousFood extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
                   child: const Icon(
-                    Icons.shopping_cart,
+                    Icons.fastfood_outlined,
                     color: Colors.white,
                     size: 27,
                   ),
@@ -266,6 +266,115 @@ class DeliciousFood extends StatelessWidget {
                 ),
               )
             ],
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 23),
+            padding: const EdgeInsets.all(7),
+            height: 200,
+            width: 520,
+            decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 225, 214, 214),
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 8),
+                          child: Text(
+                            "Eggs Curry",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 7),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Eggs to tomato and souce",
+                              ),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          "\$15.00",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.all(5),
+                        height: 160,
+                        width: 180,
+                        decoration: const BoxDecoration(
+                          color: Colors.amber,
+                          image: DecorationImage(
+                              image: AssetImage('assets/images/11.jpeg'),
+                              fit: BoxFit.cover),
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            height: 60,
+            width: 520,
+            decoration: const BoxDecoration(
+              color: Color.fromARGB(255, 34, 27, 27),
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  height: 40,
+                  width: 40,
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 197, 185, 185),
+                      borderRadius: BorderRadius.all(Radius.circular(100))),
+                  child: const Icon(
+                    Icons.home,
+                    color: Colors.white,
+                  ),
+                ),
+                const Icon(
+                  Icons.wallet,
+                  color: Colors.white,
+                  size: 27,
+                ),
+                const Icon(
+                  Icons.contact_support_outlined,
+                  color: Colors.white,
+                  size: 27,
+                ),
+                const Icon(
+                  Icons.person,
+                  color: Colors.white,
+                  size: 27,
+                ),
+              ],
+            ),
           ),
         ],
       ),
