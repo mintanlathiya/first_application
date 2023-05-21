@@ -105,7 +105,7 @@ class DesignerCakeUi extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 20, bottom: 5),
             child: Row(
               children: [
                 Text(
@@ -114,7 +114,7 @@ class DesignerCakeUi extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 20, bottom: 5),
             child: Row(
               children: [
                 Text('Of Blueberry. We have wide range of cakes on our store'),
@@ -130,7 +130,7 @@ class DesignerCakeUi extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
