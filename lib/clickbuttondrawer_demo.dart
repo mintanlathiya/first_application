@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ClickDrawerUi extends StatelessWidget {
-  const ClickDrawerUi({super.key});
+  ClickDrawerUi({super.key});
+  final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       appBar: AppBar(),
       drawer: const Drawer(
         child: Column(
@@ -17,7 +19,7 @@ class ClickDrawerUi extends StatelessWidget {
       body: Center(
         child: IconButton(
           onPressed: () {
-            Scaffold.of(context).openDrawer();
+            _key.currentState!.openDrawer();
           },
           icon: const Icon(Icons.add),
         ),
