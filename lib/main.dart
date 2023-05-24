@@ -1,4 +1,4 @@
-import 'package:first_application/clickbuttondrawer_demo.dart';
+import 'package:first_application/travelui_demo.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,9 +9,9 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ClickDrawerUi(),
+      home: TravelUi(),
     );
   }
 }

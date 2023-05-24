@@ -5,7 +5,7 @@ class ButtonDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -40,12 +40,12 @@ class ButtonDemo extends StatelessWidget {
             // const SizedBox(
             //   height: 10,
             // ),
-            ElevatedButton(
-              onPressed: () {
-                print('hi i am elevatedbutton');
-              },
-              child: const Text('elevatedbutton'),
-            ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     print('hi i am elevatedbutton');
+            //   },
+            //   child: const Text('elevatedbutton'),
+            // ),
             // const SizedBox(
             //   height: 10,
             // ),
@@ -59,10 +59,25 @@ class ButtonDemo extends StatelessWidget {
             //   height: 10,
             // ),
             // IconButton(
-            //     onPressed: () {
-            //       print("Hi i am icon button");
-            //     },
-            //     icon: const Icon(Icons.menu)),
+            //   onPressed: () {
+            //     print("Hi i am icon button");
+            //   },
+            //   icon: const Icon(Icons.menu),
+            //   alignment: Alignment.center,
+            //   color: Colors.amber,
+            //   //disabledColor: Colors.blue,
+            //   //focusColor: Colors.brown,
+            //   highlightColor: Colors.cyan,
+            //   hoverColor: Colors.deepOrange,
+            //   iconSize: 100,
+            //   tooltip: 'mini',
+            //style: const ButtonStyle(
+            //   shape: MaterialStatePropertyAll(OvalBorder())),
+            //splashRadius: 50,
+            // padding: const EdgeInsets.only(left: 50),
+            // isSelected: false,
+            // selectedIcon: const Icon(Icons.menu),
+            // ),
             // const SizedBox(
             //   height: 10,
             // ),
@@ -122,24 +137,24 @@ class ButtonDemo extends StatelessWidget {
             // const SizedBox(
             //   height: 10,
             // ),
-            // GestureDetector(
-            //   onTap: () {
-            //     print('hi i am ontap event');
-            //   },
-            //   onDoubleTap: () {
-            //     print('hi i am ondoubletap event');
-            //   },
-            //   onLongPress: () {
-            //     print('hi i am onlongpress event');
-            //   },
-            //   child: Container(
-            //     height: 100,
-            //     width: 100,
-            //     color: Colors.blue,
-            //     alignment: Alignment.center,
-            //     child: const Text('mintan'),
-            //   ),
-            // ),
+            GestureDetector(
+              onTap: () {
+                print('hi i am ontap event');
+              },
+              onDoubleTap: () {
+                print('hi i am ondoubletap event');
+              },
+              onLongPress: () {
+                print('hi i am onlongpress event');
+              },
+              child: Container(
+                height: 100,
+                width: 100,
+                color: Colors.blue,
+                alignment: Alignment.center,
+                child: const Text('mintan'),
+              ),
+            ),
           ],
         ),
       ),

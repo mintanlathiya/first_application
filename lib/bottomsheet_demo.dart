@@ -10,7 +10,12 @@ class BottomSheetDemo extends StatelessWidget {
         child: MaterialButton(
           onPressed: () {
             print(showModalBottomSheet(
-              shape: const CircleBorder(),
+              backgroundColor: Colors.transparent,
+              //backgroundColor: Colors.amberAccent,
+              // barrierColor: Colors.red,
+              // elevation: 50,
+              // isDismissible: true,
+              //useSafeArea: false,
               context: context,
               builder: (context) => Container(
                 height: 500,

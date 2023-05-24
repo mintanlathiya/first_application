@@ -78,74 +78,83 @@ class FavoriteRoom1 extends StatelessWidget {
                 Stack(
                   children: [
                     Container(
-                      margin: const EdgeInsets.all(30),
-                      padding: const EdgeInsets.all(30),
-                      height: 240,
-                      width: 240,
+                      height: 280,
+                      width: 280,
                       decoration: BoxDecoration(
-                          color: Colors.black54,
-                          border: Border.all(
-                            color: Colors.yellow.shade200,
-                            strokeAlign: 30,
-                            width: 2,
-                          ),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(240))),
+                        border: Border.all(
+                          width: 2,
+                          color: const Color.fromARGB(255, 193, 193, 100),
+                        ),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(240)),
+                      ),
+                    ),
+                    Positioned(
+                      top: 28,
+                      left: 30,
                       child: Container(
-                        margin: const EdgeInsets.all(10),
-                        padding: const EdgeInsets.all(30),
-                        decoration: BoxDecoration(
-                            color: Colors.black26,
-                            border: Border.all(
-                              strokeAlign: 20,
-                              width: 2,
-                            ),
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(240))),
-                        child: Container(
-                          margin: const EdgeInsets.all(10),
-                          padding: const EdgeInsets.all(30),
-                          decoration: BoxDecoration(
-                              color: Colors.black54,
-                              border: Border.all(
-                                strokeAlign: 30,
-                                width: 2,
+                        height: 220,
+                        width: 220,
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 176, 176, 67),
+                          borderRadius: BorderRadius.all(Radius.circular(240)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 40,
+                      left: 42,
+                      child: Container(
+                        height: 195,
+                        width: 195,
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(251, 59, 58, 58),
+                          borderRadius: BorderRadius.all(Radius.circular(240)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 65,
+                      left: 68,
+                      child: Container(
+                        height: 140,
+                        width: 140,
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(250, 45, 42, 42),
+                          borderRadius: BorderRadius.all(Radius.circular(240)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 85,
+                      left: 88,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        decoration: const BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.all(Radius.circular(240)),
+                        ),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '16°',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 35,
                               ),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(240))),
-                          child: Container(
-                            margin: const EdgeInsets.all(10),
-                            padding: const EdgeInsets.all(30),
-                            decoration: BoxDecoration(
-                                color: Colors.black,
-                                border: Border.all(
-                                  strokeAlign: 20,
-                                  width: 2,
-                                ),
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(240))),
-                            child: const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  '16°',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    fontSize: 35,
-                                  ),
-                                ),
-                                Text(
-                                  'c',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                              ],
                             ),
-                          ),
+                            Text(
+                              'c',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 25,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
