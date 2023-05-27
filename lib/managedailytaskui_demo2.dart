@@ -194,266 +194,291 @@ class ManageDailyTaskUi2 extends StatelessWidget {
                 ),
               ],
             ),
+            IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text('9 Am'),
+                      Text('10 Am'),
+                    ],
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      top: 30,
+                      bottom: 5,
+                    ),
+                    height: 110,
+                    width: 360,
+                    decoration: const BoxDecoration(
+                        color: Colors.deepPurpleAccent,
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 30),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Molile  App  Design',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 30),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Mike and Anita',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Stack(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(left: 30),
+                                  child: CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage('assets/images/3.jpeg'),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 60),
+                                  child: CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage('assets/images/4.jpeg'),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(right: 30),
+                              child: Text(
+                                '9:00AM-10:00AM',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Row(
               children: [
-                Container(
-                  margin: const EdgeInsets.only(left: 40, right: 40),
-                  height: 450,
-                  width: 80,
-                  child: const Row(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text('9 AM'),
-                          Text('10 AM'),
-                          Text('10 AM'),
-                          Text('11 AM'),
-                          Text('12 AM'),
-                          Text('1:00 PM'),
-                          Text('12 AM'),
-                        ],
-                      ),
-                    ],
+                const Padding(
+                  padding: EdgeInsets.only(left: 70),
+                  child: Text('10 Am'),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 10, right: 15),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 10,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.brown,
+                      radius: 7,
+                    ),
                   ),
                 ),
                 Container(
-                  height: 450,
-                  width: 450,
-                  margin: const EdgeInsets.all(1),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(
-                          top: 30,
-                          bottom: 12,
-                        ),
-                        height: 110,
-                        width: 360,
-                        decoration: const BoxDecoration(
-                            color: Colors.deepPurpleAccent,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: const Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 30),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Molile  App  Design',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 30),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Mike and Anita',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Stack(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 30),
-                                      child: CircleAvatar(
-                                        backgroundImage:
-                                            AssetImage('assets/images/3.jpeg'),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 60),
-                                      child: CircleAvatar(
-                                        backgroundImage:
-                                            AssetImage('assets/images/4.jpeg'),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(right: 30),
-                                  child: Text(
-                                    '9:00AM-10:00AM',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      const Divider(
-                        thickness: 5,
-                        color: Colors.orange,
-                        endIndent: 15,
-                        indent: 15,
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 30),
-                        height: 110,
-                        width: 360,
-                        decoration: const BoxDecoration(
-                            color: Colors.deepPurpleAccent,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: const Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 30),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Software  Testing',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 30),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Anita and david',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Stack(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 30),
-                                      child: CircleAvatar(
-                                        backgroundImage:
-                                            AssetImage('assets/images/4.jpeg'),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 60),
-                                      child: CircleAvatar(
-                                        backgroundImage:
-                                            AssetImage('assets/images/3.jpeg'),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(right: 30),
-                                  child: Text(
-                                    '10:00AM-11:20AM',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 30),
-                        height: 110,
-                        width: 360,
-                        decoration: const BoxDecoration(
-                            color: Colors.deepPurpleAccent,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: const Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 30),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Web  Development',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 30),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Mike and Anita',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Stack(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 30),
-                                      child: CircleAvatar(
-                                        backgroundImage:
-                                            AssetImage('assets/images/3.jpeg'),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 60),
-                                      child: CircleAvatar(
-                                        backgroundImage:
-                                            AssetImage('assets/images/4.jpeg'),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(right: 30),
-                                  child: Text(
-                                    '1:00PM-2:00PM',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                  height: 50,
+                  width: 420,
+                  color: Colors.transparent,
+                  child: const Divider(
+                    color: Colors.orange,
+                    thickness: 3,
                   ),
                 ),
               ],
-            )
+            ),
+            IntrinsicHeight(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    const Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text('11 Am'),
+                        Text('12 Am'),
+                      ],
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      height: 110,
+                      width: 360,
+                      decoration: const BoxDecoration(
+                          color: Colors.deepPurpleAccent,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 30),
+                            child: Row(
+                              children: [
+                                Text(
+                                  'Software  Testing',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 30),
+                            child: Row(
+                              children: [
+                                Text(
+                                  'Anita and david',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Stack(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 30),
+                                    child: CircleAvatar(
+                                      backgroundImage:
+                                          AssetImage('assets/images/4.jpeg'),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 60),
+                                    child: CircleAvatar(
+                                      backgroundImage:
+                                          AssetImage('assets/images/3.jpeg'),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(right: 30),
+                                child: Text(
+                                  '10:00AM-11:20AM',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ]),
+            ),
+            IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text('1:00 Pm'),
+                      Text('12 Am'),
+                    ],
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 30),
+                    height: 110,
+                    width: 360,
+                    decoration: const BoxDecoration(
+                        color: Colors.deepPurpleAccent,
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 30),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Web  Development',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 30),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Mike and Anita',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Stack(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(left: 30),
+                                  child: CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage('assets/images/3.jpeg'),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 60),
+                                  child: CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage('assets/images/4.jpeg'),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(right: 30),
+                              child: Text(
+                                '1:00PM-2:00PM',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

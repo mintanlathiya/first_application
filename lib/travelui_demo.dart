@@ -14,6 +14,7 @@ class TravelUi extends StatelessWidget {
             image: AssetImage(
               'assets/images/27.jpeg',
             ),
+            fit: BoxFit.fill,
           ),
         ),
         child: Column(
@@ -54,7 +55,7 @@ class TravelUi extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 50, bottom: 40),
+              margin: const EdgeInsets.only(top: 20, left: 50, bottom: 40),
               height: 60,
               width: 140,
               alignment: Alignment.center,

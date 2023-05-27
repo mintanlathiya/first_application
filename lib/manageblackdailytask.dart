@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
 
-class ManageDailyTaskUi extends StatelessWidget {
-  const ManageDailyTaskUi({super.key});
+class ManagedailyBlackTask extends StatelessWidget {
+  const ManagedailyBlackTask({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: const Color.fromARGB(255, 12, 12, 12),
       body: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(
-              left: 70,
-              right: 70,
-            ),
             height: 400,
             decoration: const BoxDecoration(
-                color: Colors.blue,
-                image: DecorationImage(
-                    image: AssetImage('assets/images/7.jpeg'),
-                    fit: BoxFit.fill),
-                borderRadius: BorderRadius.vertical(
-                  bottom: Radius.circular(200),
-                )),
+              color: Colors.blue,
+              image: DecorationImage(
+                image: AssetImage('assets/images/33.jpeg'),
+                fit: BoxFit.fill,
+              ),
+            ),
           ),
           const Padding(
             padding: EdgeInsets.only(
@@ -35,6 +30,7 @@ class ManageDailyTaskUi extends StatelessWidget {
                   'Manage Your',
                   style: TextStyle(
                     fontSize: 40,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -51,6 +47,7 @@ class ManageDailyTaskUi extends StatelessWidget {
                 Text(
                   'daily task',
                   style: TextStyle(
+                    color: Colors.white,
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
                   ),
@@ -64,7 +61,15 @@ class ManageDailyTaskUi extends StatelessWidget {
               top: 20,
             ),
             child: Row(
-              children: [Text('team and Project management with')],
+              children: [
+                Text(
+                  'team  and  Project  management  with',
+                  style: TextStyle(
+                    color: Colors.orange,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
             ),
           ),
           const Padding(
@@ -73,7 +78,15 @@ class ManageDailyTaskUi extends StatelessWidget {
               top: 5,
             ),
             child: Row(
-              children: [Text('solution providing App')],
+              children: [
+                Text(
+                  'solution  providing  App',
+                  style: TextStyle(
+                    color: Colors.orange,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
             ),
           ),
           Row(
@@ -85,7 +98,7 @@ class ManageDailyTaskUi extends StatelessWidget {
                     height: 80,
                     width: 80,
                     decoration: const BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.orange,
                         borderRadius: BorderRadius.all(
                           Radius.circular(100),
                         )),
@@ -93,12 +106,15 @@ class ManageDailyTaskUi extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(
                       top: 80,
-                      left: 70,
+                      left: 68,
                     ),
                     child: Text(
                       'Get Started',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
