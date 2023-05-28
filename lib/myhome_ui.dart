@@ -68,10 +68,16 @@ class MyHomeUi extends StatelessWidget {
             ],
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 50),
+            padding: EdgeInsets.only(top: 80),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                CircleAvatar(
+                  backgroundColor: Color.fromARGB(255, 207, 116, 174),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
                 CircleAvatar(
                   backgroundColor: Color.fromARGB(255, 129, 205, 198),
                 ),
@@ -107,20 +113,29 @@ class MyHomeUi extends StatelessWidget {
                 CircleAvatar(
                   backgroundColor: Colors.orange,
                 ),
+                SizedBox(
+                  width: 20,
+                ),
+                CircleAvatar(
+                  backgroundColor: Color.fromARGB(255, 141, 217, 113),
+                ),
               ],
             ),
           ),
+          const SizedBox(
+            height: 25,
+          ),
           const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text('data'),
+              Text('Brightness'),
               Text(
-                'data',
+                'Color',
                 style: TextStyle(
                   color: Color.fromARGB(255, 231, 186, 129),
                 ),
               ),
-              Text('data'),
+              Text('Temperature'),
             ],
           ),
           Container(
