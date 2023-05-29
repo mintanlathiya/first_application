@@ -36,6 +36,7 @@ class GmailDrawerUi extends StatelessWidget {
                     child: Icon(
                       Icons.inbox,
                       size: 30,
+                      
                     ),
                   ),
                   Padding(
