@@ -5,47 +5,62 @@ class ButtonDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // MaterialButton(
-            //   onPressed: () {
-            //     print('hi i am material button');
-            //   },
-            //disabledColor: Colors.red,
-            //disabledElevation: 20,
-            //disabledTextColor: Colors.yellow,
-            // elevation: 50,
-            // focusColor: Colors.pink,
-            // focusElevation: 50,
-            //highlightColor: Colors.redAccent,
-            //highlightElevation: 500,
-            //hoverColor: Colors.purple,
-            // hoverElevation: 50,
-            //minWidth: 30,
-            // onLongPress: () {
-            //   print('hi i am longpress material button');
-            // },
-            // padding: EdgeInsets.all(20),
-            // shape: Border.all(
-            //   color: Colors.brown,
-            //   width: 10,
-            // ),
-            //splashColor: Colors.brown,
-            //textColor: Colors.amber,
-            // child: const Text('material button'),
-            //),
-            // const SizedBox(
-            //   height: 10,
-            // ),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     print('hi i am elevatedbutton');
-            //   },
-            //   child: const Text('elevatedbutton'),
-            // ),
+            MaterialButton(
+              onPressed: () {
+                print('hi i am material button');
+              },
+              disabledColor: Colors.red,
+              disabledElevation: 20,
+              disabledTextColor: Colors.yellow,
+              elevation: 50,
+              focusColor: Colors.black,
+              focusElevation: 50,
+              highlightColor: Colors.redAccent,
+              highlightElevation: 500,
+              hoverColor: Colors.purple,
+              hoverElevation: 50,
+              minWidth: 30,
+              onLongPress: () {
+                print('hi i am longpress material button');
+              },
+              padding: const EdgeInsets.all(20),
+              shape: Border.all(
+                color: Colors.brown,
+                width: 2,
+              ),
+              splashColor: Colors.brown,
+              textColor: Colors.amber,
+              child: const Text('material button'),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ConstrainedBox(
+              constraints: const BoxConstraints.tightFor(
+                height: 100,
+                width: 150,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  print('hi i am elevatedbutton');
+                },
+                style: ElevatedButton.styleFrom(
+                  shadowColor: Colors.amber,
+                  side: const BorderSide(
+                    width: 2,
+                    color: Colors.pink,
+                  ),
+                  shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                ),
+                child: const Text('elevatedbutton'),
+              ),
+            ),
             // const SizedBox(
             //   height: 10,
             // ),
@@ -53,6 +68,18 @@ class ButtonDemo extends StatelessWidget {
             //   onPressed: () {
             //     print('hi i am textbutton');
             //   },
+            //   style: TextButton.styleFrom(
+            //     fixedSize: const Size(150, 60),
+            //     backgroundColor: Colors.lightGreen,
+            //     shadowColor: Colors.amber,
+            //     elevation: 10,
+            //     shape: const BeveledRectangleBorder(
+            //         borderRadius: BorderRadius.all(Radius.circular(20))),
+            //     side: const BorderSide(
+            //       color: Colors.blue,
+            //       width: 2,
+            //     ),
+            //   ),
             //   child: const Text('textbutton'),
             // ),
             // const SizedBox(
@@ -67,16 +94,25 @@ class ButtonDemo extends StatelessWidget {
             //   color: Colors.amber,
             //   //disabledColor: Colors.blue,
             //   //focusColor: Colors.brown,
-            //   highlightColor: Colors.cyan,
-            //   hoverColor: Colors.deepOrange,
-            //   iconSize: 100,
+            //   // highlightColor: Colors.cyan,
+            //   //hoverColor: Colors.deepOrange,
+            //   iconSize: 80,
             //   tooltip: 'mini',
-            //style: const ButtonStyle(
-            //   shape: MaterialStatePropertyAll(OvalBorder())),
-            //splashRadius: 50,
-            // padding: const EdgeInsets.only(left: 50),
-            // isSelected: false,
-            // selectedIcon: const Icon(Icons.menu),
+            //   style: IconButton.styleFrom(
+            //     backgroundColor: Colors.lightGreen,
+            //     shadowColor: Colors.pinkAccent,
+            //     elevation: 10,
+            //     shape: const BeveledRectangleBorder(
+            //         borderRadius: BorderRadius.all(Radius.circular(10))),
+            //     side: const BorderSide(
+            //       width: 2,
+            //       color: Colors.blue,
+            //     ),
+            //   ),
+            //   //splashRadius: 50,
+            //   padding: const EdgeInsets.all(10),
+            //   // isSelected: false,
+            //   selectedIcon: const Icon(Icons.menu),
             // ),
             // const SizedBox(
             //   height: 10,
@@ -86,31 +122,36 @@ class ButtonDemo extends StatelessWidget {
             //       print('hi i am outlinebutton');
             //     },
             //     child: const Text('outlinebutton')),
-            // const SizedBox(
-            //   height: 10,
-            // ),
-            // FloatingActionButton(
-            //   //backgroundColor: Colors.amber,
-            //   onPressed: () {
-            //     print('Hi I Am Floating Action Button');
-            //   },
-            //disabledElevation: 50,
-            //splashColor: Colors.red,
-            //elevation: 100,
-            //focusColor: Colors.red,
-            //focusElevation: 50,
-            //isExtended: true,
-            //mini: true,
-            // tooltip: 'mintan',
-            //hoverColor: Colors.amber,
-            //hoverElevation: 50,
-            // shape: Border.all(
-            //   color: Colors.amber,
-            //   strokeAlign: 10,
-            // ),
-            //highlightElevation: 30,
-            //   child: const Icon(Icons.add),
-            // ),
+            const SizedBox(
+              height: 10,
+            ),
+            FloatingActionButton(
+              //backgroundColor: Colors.amber,
+              onPressed: () {
+                print('Hi I Am Floating Action Button');
+              },
+
+              disabledElevation: 50,
+              splashColor: Colors.purple,
+              elevation: 100,
+              focusColor: Colors.red,
+              focusElevation: 50,
+              isExtended: true,
+              //mini: true,
+              tooltip: 'mintan',
+              hoverColor: Colors.black,
+              hoverElevation: 50,
+
+              shape: const BeveledRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                side: BorderSide(
+                  width: 2,
+                  color: Colors.pinkAccent,
+                ),
+              ),
+              highlightElevation: 30,
+              child: const Icon(Icons.add),
+            ),
             // const SizedBox(
             //   height: 10,
             // ),
@@ -137,24 +178,24 @@ class ButtonDemo extends StatelessWidget {
             // const SizedBox(
             //   height: 10,
             // ),
-            GestureDetector(
-              onTap: () {
-                print('hi i am ontap event');
-              },
-              onDoubleTap: () {
-                print('hi i am ondoubletap event');
-              },
-              onLongPress: () {
-                print('hi i am onlongpress event');
-              },
-              child: Container(
-                height: 100,
-                width: 100,
-                color: Colors.blue,
-                alignment: Alignment.center,
-                child: const Text('mintan'),
-              ),
-            ),
+            // GestureDetector(
+            //   onTap: () {
+            //     print('hi i am ontap event');
+            //   },
+            //   onDoubleTap: () {
+            //     print('hi i am ondoubletap event');
+            //   },
+            //   onLongPress: () {
+            //     print('hi i am onlongpress event');
+            //   },
+            //   child: Container(
+            //     height: 100,
+            //     width: 100,
+            //     color: Colors.blue,
+            //     alignment: Alignment.center,
+            //     child: const Text('mintan'),
+            //   ),
+            // ),
           ],
         ),
       ),

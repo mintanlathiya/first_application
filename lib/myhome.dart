@@ -260,41 +260,49 @@ class MyHome extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.only(top: 60),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Column(
               children: [
-                Column(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Icon(
-                      Icons.home,
-                      color: Colors.brown,
+                    Column(
+                      children: [
+                        Icon(
+                          Icons.home,
+                          color: Colors.brown,
+                        ),
+                        Text('Home'),
+                      ],
                     ),
-                    Text('Home'),
+                    Column(
+                      children: [
+                        Icon(Icons.lightbulb_outline),
+                        Text('Scenes'),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Icon(Icons.watch_later_outlined),
+                        Text('Schedule'),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Icon(Icons.insert_drive_file_outlined),
+                        Text('Manage'),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Icon(Icons.person),
+                        Text('Me'),
+                      ],
+                    ),
                   ],
                 ),
-                Column(
-                  children: [
-                    Icon(Icons.lightbulb_outline),
-                    Text('Scenes'),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Icon(Icons.watch_later_outlined),
-                    Text('Schedule'),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Icon(Icons.insert_drive_file_outlined),
-                    Text('Manage'),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Icon(Icons.person),
-                    Text('Me'),
-                  ],
+                Divider(
+                  thickness: 5,
+                  color: Colors.black,
                 ),
               ],
             ),
