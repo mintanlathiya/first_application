@@ -46,7 +46,7 @@ class DreamHouseUi extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Stack(
                   children: [

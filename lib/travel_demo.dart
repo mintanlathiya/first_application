@@ -8,7 +8,7 @@ class TravelDemo extends StatelessWidget {
     return Scaffold(
       body: Container(
         height: 850,
-        width: 620,
+        //width: 620,
         decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
@@ -29,7 +29,7 @@ class TravelDemo extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(top: 150),
               height: 618,
-              width: 620,
+              //width: 620,
               decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 236, 232, 232),
                   borderRadius:
@@ -39,11 +39,12 @@ class TravelDemo extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.all(20),
                     height: 50,
-                    width: 470,
+                    // width: 470,
                     decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 225, 209, 209),
                         borderRadius: BorderRadius.all(Radius.circular(30))),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
                           height: 50,
@@ -191,8 +192,8 @@ class TravelDemo extends StatelessWidget {
                   const Divider(
                     height: 0,
                     color: Colors.black,
-                    endIndent: 35,
-                    indent: 35,
+                    endIndent: 38,
+                    indent: 38,
                     thickness: 2,
                   ),
                   Container(
@@ -320,8 +321,8 @@ class TravelDemo extends StatelessWidget {
                   const Divider(
                     height: 0,
                     color: Colors.black,
-                    endIndent: 35,
-                    indent: 35,
+                    endIndent: 38,
+                    indent: 38,
                     thickness: 2,
                   ),
                   Container(

@@ -1,0 +1,332 @@
+import 'package:first_application/listofmap_demo.dart/uesr_model.dart';
+import 'package:flutter/material.dart';
+
+final List<Map> whatsappList = [
+  {
+    'url': 'assets/images/3.jpeg',
+    'name': 'mintan',
+    'message': 'hello',
+    'time': '3;00am',
+    'icon': Icons.call,
+  },
+  {
+    'url': 'assets/images/4.jpeg',
+    'name': 'ravi',
+    'message': 'ok',
+    'time': '5:20am',
+    'icon': Icons.video_call,
+  },
+  {
+    'url': 'assets/images/5.jpeg',
+    'name': 'kappu',
+    'message': 'kya?',
+    'time': '3:0am',
+    'icon': Icons.call,
+  },
+  {
+    'url': 'assets/images/4.jpeg',
+    'name': 'viraj',
+    'message': 'hello',
+    'time': '12:00am',
+    'icon': Icons.call,
+  },
+  {
+    'url': 'assets/images/3.jpeg',
+    'name': 'meet6',
+    'message': 'hello bhai',
+    'time': '4:00am',
+    'icon': Icons.call,
+  },
+  {
+    'url': 'assets/images/4.jpeg',
+    'name': 'raj',
+    'message': 'ok buy',
+    'time': '5:20am',
+    'icon': Icons.video_call,
+  },
+  {
+    'url': 'assets/images/5.jpeg',
+    'name': 'jemish',
+    'message': 'kya cho?',
+    'time': '3:00am',
+    'icon': Icons.call,
+  },
+  {
+    'url': 'assets/images/4.jpeg',
+    'name': 'veer',
+    'message': 'good',
+    'time': '11:00am',
+    'icon': Icons.call,
+  },
+];
+
+final List<Map<String, dynamic>> userDetails = [
+  {
+    'userName': 'mintan',
+    'emailId': 'mintan@gmail.com',
+    'url': 'assets/images/3.jpeg',
+    'time': '3:00am',
+    'icon': Icons.call,
+  },
+  {
+    'userName': 'viraj',
+    'emailId': 'viraj@gmail.com',
+    'url': 'assets/images/4.jpeg',
+    'time': '3:00am',
+    'icon': Icons.call,
+  },
+  {
+    'userName': 'ansh',
+    'emailId': 'ansh@gmail.com',
+    'url': 'assets/images/5.jpeg',
+    'time': '11:00am',
+    'icon': Icons.call,
+  },
+  {
+    'userName': 'vishal',
+    'emailId': 'vishal@gmail.com',
+    'url': 'assets/images/22.jpeg',
+    'time': '11:00am',
+    'icon': Icons.video_call,
+  },
+  {
+    'userName': 'hardik',
+    'emailId': 'hardik@gmail.com',
+    'url': 'assets/images/23.jpeg',
+    'time': '11:00am',
+    'icon': Icons.call,
+  },
+  {
+    'userName': 'jemish',
+    'emailId': 'jemish@gmail.com',
+    'url': 'assets/images/24.jpeg',
+    'time': '1:10am',
+    'icon': Icons.call,
+  },
+  {
+    'userName': 'kappu',
+    'emailId': 'kappu@gmail.com',
+    'url': 'assets/images/25.jpeg',
+    'time': '8:20am',
+    'icon': Icons.call,
+  },
+  {
+    'userName': 'raj',
+    'emailId': 'raj@gmail.com',
+    'url': 'assets/images/27.jpeg',
+    'time': '1:00am',
+    'icon': Icons.video_call,
+  },
+  {
+    'userName': 'pravin',
+    'emailId': 'pravin@gmail.com',
+    'url': 'assets/images/30.jpeg',
+    'time': '12:00am',
+    'icon': Icons.call,
+  },
+  {
+    'userName': 'jatin',
+    'emailId': 'jatin@gmail.com',
+    'url': 'assets/images/26.jpeg',
+    'time': '11:00am',
+    'icon': Icons.call,
+  },
+];
+List<User> userData = [];
+
+final List<Map<String, dynamic>> userCallDetails = [
+  {
+    'name': 'mintan',
+    'url': 'assets/images/3.jpeg',
+    'time': '3:00am',
+    'icon': Icons.call,
+  },
+  {
+    'name': 'viraj',
+    'url': 'assets/images/4.jpeg',
+    'time': '3:00am',
+    'icon': Icons.call,
+  },
+  {
+    'name': 'ansh',
+    'url': 'assets/images/5.jpeg',
+    'time': '11:00am',
+    'icon': Icons.call,
+  },
+  {
+    'name': 'vishal',
+    'url': 'assets/images/22.jpeg',
+    'time': '11:00am',
+    'icon': Icons.video_call,
+  },
+  {
+    'name': 'hardik',
+    'url': 'assets/images/23.jpeg',
+    'time': '11:00am',
+    'icon': Icons.call,
+  },
+  {
+    'name': 'jemish',
+    'url': 'assets/images/24.jpeg',
+    'time': '1:10am',
+    'icon': Icons.call,
+  },
+  {
+    'name': 'kappu',
+    'url': 'assets/images/25.jpeg',
+    'time': '8:20am',
+    'icon': Icons.call,
+  },
+  {
+    'name': 'raj',
+    'url': 'assets/images/27.jpeg',
+    'time': '1:00am',
+    'icon': Icons.video_call,
+  },
+  {
+    'name': 'pravin',
+    'url': 'assets/images/30.jpeg',
+    'time': '12:00am',
+    'icon': Icons.call,
+  },
+  {
+    'name': 'jatin',
+    'url': 'assets/images/26.jpeg',
+    'time': '11:00am',
+    'icon': Icons.call,
+  },
+];
+List<UserCall> userCallData = [];
+
+final List<Map<String, dynamic>> userInstaDetails = [
+  {
+    'name': 'mintan',
+    'url': 'assets/images/3.jpeg',
+  },
+  {
+    'name': 'viraj',
+    'url': 'assets/images/4.jpeg',
+  },
+  {
+    'name': 'ansh',
+    'url': 'assets/images/5.jpeg',
+  },
+  {
+    'name': 'vishal',
+    'url': 'assets/images/22.jpeg',
+  },
+  {
+    'name': 'hardik',
+    'url': 'assets/images/23.jpeg',
+  },
+  {
+    'name': 'jemish',
+    'url': 'assets/images/24.jpeg',
+  },
+  {
+    'name': 'kappu',
+    'url': 'assets/images/25.jpeg',
+  },
+  {
+    'name': 'raj',
+    'url': 'assets/images/27.jpeg',
+  },
+  {
+    'name': 'pravin',
+    'url': 'assets/images/30.jpeg',
+  },
+  {
+    'name': 'jatin',
+    'url': 'assets/images/26.jpeg',
+  },
+];
+List<UserInsta> userInstaData = [];
+
+final List<Map<String, dynamic>> gmailDrawer = [
+  {
+    'icon': Icons.inbox,
+    'iconName': 'All inboxes',
+  },
+  {},
+  {
+    'icon': Icons.stay_primary_landscape,
+    'iconName': 'Primary',
+    'messageNumber':'3 new',
+  },
+  {
+    'icon': Icons.inbox,
+    'iconName': 'Promotios',
+    'messageNumber': '8 new',
+  },
+  {
+    'icon': Icons.group_outlined,
+    'iconName': 'Social',
+    'messageNumber': '8 new',
+  },
+  {
+    'iconName': 'All labels',
+  },
+  {
+    'icon': Icons.star,
+    'iconName': 'Starred',
+  },
+  {
+    'icon': Icons.watch_later_outlined,
+    'iconName': 'Snoozed',
+  },
+  {
+    'icon': Icons.social_distance,
+    'iconName': 'Important',
+    'messageNumber':'99+',
+  },
+  {
+    'icon': Icons.send,
+    'iconName': 'Sent',
+  },
+  {
+    'icon': Icons.schedule_send_outlined,
+    'iconName': 'Scheduled',
+  },
+  {
+    'icon': Icons.outbox,
+    'iconName': 'OutBox',
+  },
+  {
+    'icon': Icons.drafts,
+    'iconName': 'Drafts',
+    'messageNumber':'1',
+  },
+  {
+    'icon': Icons.mail,
+    'iconName': 'All mail',
+  },
+  {
+    'icon': Icons.disabled_by_default_sharp,
+    'iconName': 'Spam',
+    'messageNumber':'6',
+  },
+  {
+    'icon': Icons.delete,
+    'iconName': 'Transh',
+  },
+  {
+    'iconName': 'Google apps',
+  },
+  {
+    'icon': Icons.calendar_month,
+    'iconName': 'Calendar',
+  },
+  {
+    'icon': Icons.person,
+    'iconName': 'Contacts',
+  },
+  {
+    'icon': Icons.settings,
+    'iconName': 'Settings',
+  },
+  {
+    'icon': Icons.help,
+    'iconName': 'Help & feedback',
+  },
+];
+List<GmailDrawer> gmailDrawerData = [];

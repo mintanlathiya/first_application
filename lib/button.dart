@@ -61,67 +61,67 @@ class ButtonDemo extends StatelessWidget {
                 child: const Text('elevatedbutton'),
               ),
             ),
-            // const SizedBox(
-            //   height: 10,
-            // ),
-            // TextButton(
-            //   onPressed: () {
-            //     print('hi i am textbutton');
-            //   },
-            //   style: TextButton.styleFrom(
-            //     fixedSize: const Size(150, 60),
-            //     backgroundColor: Colors.lightGreen,
-            //     shadowColor: Colors.amber,
-            //     elevation: 10,
-            //     shape: const BeveledRectangleBorder(
-            //         borderRadius: BorderRadius.all(Radius.circular(20))),
-            //     side: const BorderSide(
-            //       color: Colors.blue,
-            //       width: 2,
-            //     ),
-            //   ),
-            //   child: const Text('textbutton'),
-            // ),
-            // const SizedBox(
-            //   height: 10,
-            // ),
-            // IconButton(
-            //   onPressed: () {
-            //     print("Hi i am icon button");
-            //   },
-            //   icon: const Icon(Icons.menu),
-            //   alignment: Alignment.center,
-            //   color: Colors.amber,
-            //   //disabledColor: Colors.blue,
-            //   //focusColor: Colors.brown,
-            //   // highlightColor: Colors.cyan,
-            //   //hoverColor: Colors.deepOrange,
-            //   iconSize: 80,
-            //   tooltip: 'mini',
-            //   style: IconButton.styleFrom(
-            //     backgroundColor: Colors.lightGreen,
-            //     shadowColor: Colors.pinkAccent,
-            //     elevation: 10,
-            //     shape: const BeveledRectangleBorder(
-            //         borderRadius: BorderRadius.all(Radius.circular(10))),
-            //     side: const BorderSide(
-            //       width: 2,
-            //       color: Colors.blue,
-            //     ),
-            //   ),
-            //   //splashRadius: 50,
-            //   padding: const EdgeInsets.all(10),
-            //   // isSelected: false,
-            //   selectedIcon: const Icon(Icons.menu),
-            // ),
-            // const SizedBox(
-            //   height: 10,
-            // ),
-            // OutlinedButton(
-            //     onPressed: () {
-            //       print('hi i am outlinebutton');
-            //     },
-            //     child: const Text('outlinebutton')),
+            const SizedBox(
+              height: 10,
+            ),
+            TextButton(
+              onPressed: () {
+                print('hi i am textbutton');
+              },
+              style: TextButton.styleFrom(
+                fixedSize: const Size(150, 60),
+                backgroundColor: Colors.lightGreen,
+                shadowColor: Colors.amber,
+                elevation: 10,
+                shape: const BeveledRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                side: const BorderSide(
+                  color: Colors.blue,
+                  width: 2,
+                ),
+              ),
+              child: const Text('textbutton'),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            IconButton(
+              onPressed: () {
+                print("Hi i am icon button");
+              },
+              icon: const Icon(Icons.menu),
+              alignment: Alignment.center,
+              color: Colors.amber,
+              //disabledColor: Colors.blue,
+              //focusColor: Colors.brown,
+              // highlightColor: Colors.cyan,
+              //hoverColor: Colors.deepOrange,
+              iconSize: 80,
+              tooltip: 'mini',
+              style: IconButton.styleFrom(
+                backgroundColor: Colors.lightGreen,
+                shadowColor: Colors.pinkAccent,
+                elevation: 10,
+                shape: const BeveledRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                side: const BorderSide(
+                  width: 2,
+                  color: Colors.blue,
+                ),
+              ),
+              //splashRadius: 50,
+              padding: const EdgeInsets.all(10),
+              // isSelected: false,
+              selectedIcon: const Icon(Icons.menu),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            OutlinedButton(
+                onPressed: () {
+                  print('hi i am outlinebutton');
+                },
+                child: const Text('outlinebutton')),
             const SizedBox(
               height: 10,
             ),
@@ -152,50 +152,49 @@ class ButtonDemo extends StatelessWidget {
               highlightElevation: 30,
               child: const Icon(Icons.add),
             ),
-            // const SizedBox(
-            //   height: 10,
-            // ),
-            // FloatingActionButton.extended(
-            //   onPressed: () {
-            //     print('hi i am floatingextended buttun');
-            //   },
-            //   label: const Text('mintan'),
-            //   icon: const Icon(Icons.add),
-            // ),
-            // FloatingActionButton.large(
-            //   onPressed: () {
-            //     print('i am large floatingbutton');
-            //   },
-            //   child: const Icon(Icons.add),
-            // ),
-            // FloatingActionButton.small(
-            //   onPressed: () {
-            //     print('i am large floatingbutton');
-            //   },
-            //   child: const Icon(Icons.add),
-            // ),
-
-            // const SizedBox(
-            //   height: 10,
-            // ),
-            // GestureDetector(
-            //   onTap: () {
-            //     print('hi i am ontap event');
-            //   },
-            //   onDoubleTap: () {
-            //     print('hi i am ondoubletap event');
-            //   },
-            //   onLongPress: () {
-            //     print('hi i am onlongpress event');
-            //   },
-            //   child: Container(
-            //     height: 100,
-            //     width: 100,
-            //     color: Colors.blue,
-            //     alignment: Alignment.center,
-            //     child: const Text('mintan'),
-            //   ),
-            // ),
+            const SizedBox(
+              height: 10,
+            ),
+            FloatingActionButton.extended(
+              onPressed: () {
+                print('hi i am floatingextended buttun');
+              },
+              label: const Text('mintan'),
+              icon: const Icon(Icons.add),
+            ),
+            FloatingActionButton.large(
+              onPressed: () {
+                print('i am large floatingbutton');
+              },
+              child: const Icon(Icons.add),
+            ),
+            FloatingActionButton.small(
+              onPressed: () {
+                print('i am large floatingbutton');
+              },
+              child: const Icon(Icons.add),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            GestureDetector(
+              onTap: () {
+                print('hi i am ontap event');
+              },
+              onDoubleTap: () {
+                print('hi i am ondoubletap event');
+              },
+              onLongPress: () {
+                print('hi i am onlongpress event');
+              },
+              child: Container(
+                height: 100,
+                width: 100,
+                color: Colors.blue,
+                alignment: Alignment.center,
+                child: const Text('mintan'),
+              ),
+            ),
           ],
         ),
       ),

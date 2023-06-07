@@ -59,14 +59,35 @@ class AppBarUiDemo extends StatelessWidget {
         onPressed: () {},
         child: const Icon(Icons.add),
       ),
-      bottomNavigationBar: const Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Icon(Icons.home),
-          Icon(Icons.share),
-          Icon(Icons.home),
-          Icon(Icons.home),
+
+      // bottomNavigationBar: const Row(
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //   children: [
+      //     Icon(Icons.home),
+      //     Icon(Icons.share),
+      //     Icon(Icons.home),
+      //     Icon(Icons.home),
+      //   ],
+      // ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.call),
+            label: 'call',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'setting',
+          ),
         ],
+        backgroundColor: Colors.greenAccent,
+        iconSize: 40,
+        selectedItemColor: Colors.red,
       ),
     );
   }
