@@ -120,23 +120,19 @@ class GmailDrawer {
 
 class GmailPageDrawer {
   IconData? icon;
-  String? acName, message, messageNumber, acSymbol, secMessage, messageDate;
+  String? senderName, subName, messageNumber, messageDate;
   GmailPageDrawer(
       {this.icon,
-      this.acName,
-      this.message,
+      this.senderName,
+      this.subName,
       this.messageNumber,
-      this.acSymbol,
-      this.secMessage,
       this.messageDate});
   factory GmailPageDrawer.fromJson(Map<String, dynamic> json) =>
       GmailPageDrawer(
         icon: json['icon'],
-        acName: json['acName'],
-        message: json['message'],
+        senderName: json['senderName'],
+        subName: json['subName'],
         messageNumber: json['messageNumber'],
-        acSymbol: json['acSymbol'],
-        secMessage: json['secMessage'],
         messageDate: json['messageDate'],
       );
   Map<String, dynamic> toJson() {
@@ -144,21 +140,16 @@ class GmailPageDrawer {
     if (icon != null) {
       data['icon'] = icon;
     }
-    if (acName != null) {
-      data['acName'] = acName;
+    if (senderName != null) {
+      data['senderName'] = senderName;
     }
-    if (message != null) {
-      data['message'] = message;
+    if (subName != null) {
+      data['subName'] = subName;
     }
     if (messageNumber != null) {
       data['messageNumber'] = messageNumber;
     }
-    if (acSymbol != null) {
-      data['acSymbol'] = acSymbol;
-    }
-    if (secMessage != null) {
-      data['secMessage'] = secMessage;
-    }
+
     if (messageDate != null) {
       data['messageDate'] = messageDate;
     }

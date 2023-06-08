@@ -1,4 +1,4 @@
-import 'package:first_application/listofmap_demo.dart/listview_demo.dart';
+import 'package:first_application/listofmap_demo.dart/gmail_model_demo.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ListViewDemo(),
+      home: GmailModelDemo(),
     );
   }
 }

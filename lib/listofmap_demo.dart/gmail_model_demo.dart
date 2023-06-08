@@ -85,7 +85,7 @@ class GmailModelDemo extends StatelessWidget {
             children: [
               const Text('primary'),
               ...List.generate(gmailPageData.length, (index) {
-                if (gmailPageData[index].acSymbol == null) {
+                if (gmailPageData[index].messageDate == null) {
                   return ListTile(
                       leading: Icon(
                         gmailPageData[index].icon!,
@@ -93,13 +93,13 @@ class GmailModelDemo extends StatelessWidget {
                         size: 40,
                       ),
                       title: Text(
-                        gmailPageData[index].acName!,
+                        gmailPageData[index].senderName!,
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       subtitle: Text(
-                        gmailPageData[index].message!,
+                        gmailPageData[index].subName!,
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
@@ -130,7 +130,7 @@ class GmailModelDemo extends StatelessWidget {
                             backgroundColor: Colors.amber,
                             child: Text(
                               gmailPageData[index]
-                                  .acName!
+                                  .senderName!
                                   .characters
                                   .first
                                   .toUpperCase(),
@@ -148,18 +148,17 @@ class GmailModelDemo extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                gmailPageData[index].acName!,
+                                gmailPageData[index].senderName!,
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
-                                gmailPageData[index].message!,
+                                gmailPageData[index].subName!,
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Text(gmailPageData[index].secMessage!),
                             ],
                           ),
                         ),
