@@ -251,7 +251,7 @@ final List<Map<String, dynamic>> gmailDrawer = [
   {
     'icon': Icons.stay_primary_landscape,
     'iconName': 'Primary',
-    'messageNumber':'3 new',
+    'messageNumber': '3 new',
   },
   {
     'icon': Icons.inbox,
@@ -277,7 +277,7 @@ final List<Map<String, dynamic>> gmailDrawer = [
   {
     'icon': Icons.social_distance,
     'iconName': 'Important',
-    'messageNumber':'99+',
+    'messageNumber': '99+',
   },
   {
     'icon': Icons.send,
@@ -294,7 +294,7 @@ final List<Map<String, dynamic>> gmailDrawer = [
   {
     'icon': Icons.drafts,
     'iconName': 'Drafts',
-    'messageNumber':'1',
+    'messageNumber': '1',
   },
   {
     'icon': Icons.mail,
@@ -303,7 +303,7 @@ final List<Map<String, dynamic>> gmailDrawer = [
   {
     'icon': Icons.disabled_by_default_sharp,
     'iconName': 'Spam',
-    'messageNumber':'6',
+    'messageNumber': '6',
   },
   {
     'icon': Icons.delete,
@@ -330,3 +330,168 @@ final List<Map<String, dynamic>> gmailDrawer = [
   },
 ];
 List<GmailDrawer> gmailDrawerData = [];
+
+//  ************************** All Emails Details Api *********************** //
+
+final List<Map<String, dynamic>> gmailPageDetail = [
+  {
+    'icon': Icons.label_important_outline,
+    'acName': 'Promotions',
+    'message': 'Sayyedmahboob Khazi.Natio...',
+    'messageNumber': '2 new',
+  },
+  {
+    'acSymbol': 'C',
+    'acName': 'COINW',
+    'message': 'Unlimited! MacBook Prp givewa...',
+    'secMessage': 'join the trading from on 6.6-6.15  (...',
+    'messageDate': 'Jun 7',
+    'icon': Icons.star_border,
+  },
+  {
+    'acSymbol': 'A',
+    'acName': 'Angle One',
+    'message': 'Register of Securities & Funds fo...',
+    'secMessage': 'Dear lathiya mintan kanjibhai,with...',
+    'messageDate': 'Jun 7',
+    'icon': Icons.star_border,
+  },
+  {
+    'acSymbol': 'B',
+    'acName': 'BSE INVESTOR PROTECTION...',
+    'message': 'Awareness message from BSe inves...',
+    'secMessage': 'Dear Investor,Please follow the bel...',
+    'messageDate': 'Jun 7',
+    'icon': Icons.star_border,
+  },
+  {
+    'icon': Icons.group_outlined,
+    'acName': 'Social',
+    'message': ' Facebook Friending',
+    'messageNumber': '8 new',
+  },
+  {
+    'acSymbol': 'M',
+    'acName': 'Medium Daily Digest',
+    'message': 'I Used chatGPT (Every Day) for 5...',
+    'secMessage': 'Mintan Lathiya Stories for MintanLa...',
+    'messageDate': 'Jun 7',
+    'icon': Icons.star_border,
+  },
+  {
+    'acSymbol': 'C',
+    'acName': 'COINW',
+    'message': 'Unlimited! MacBook Prp givewa...',
+    'secMessage': 'join the trading from on 6.6-6.15  (...',
+    'messageDate': 'Jun 7',
+    'icon': Icons.star_border,
+  },
+  {
+    'acSymbol': 'A',
+    'acName': 'Angle One',
+    'message': 'Important advisory',
+    'secMessage': 'Be cautious in your dealings Dear C...',
+    'messageDate': 'Jun 6',
+    'icon': Icons.star_border,
+  },
+  {
+    'acSymbol': 'B',
+    'acName': 'BSE INVESTOR PROTECTION...',
+    'message': 'Awareness message from BSe inves...',
+    'secMessage': 'Dear Investor,Please follow the bel...',
+    'messageDate': 'Jun 6',
+    'icon': Icons.star_border,
+  },
+  {
+    'acSymbol': 'N',
+    'acName': 'nse_alerts',
+    'message': 'Funds/Securities Balance',
+    'secMessage': 'Dear Investor,With reference to NS...',
+    'messageDate': 'Jun 6',
+    'icon': Icons.star_border,
+  },
+  {
+    'acSymbol': 'B',
+    'acName': 'BSE INVESTOR PROTECTION...',
+    'message': 'Awareness message from BSe inves...',
+    'secMessage': 'Dear Investor,Please follow the bel...',
+    'messageDate': 'Jun 5',
+    'icon': Icons.star_border,
+  },
+];
+List<GmailPageDrawer> gmailPageData = [];
+
+final List<Map<String, dynamic>> youtubeDetail = [
+  {
+    'icon': Icons.sports_esports_outlined,
+    'iconName': 'Create a Short',
+  },
+  {
+    'icon': Icons.upload,
+    'iconName': 'Upload a video',
+  },
+  {
+    'icon': Icons.live_tv_outlined,
+    'iconName': 'Go live',
+  },
+  {
+    'icon': Icons.post_add,
+    'iconName': 'Create a post',
+  },
+];
+List<YoutubeBottomSheet> youtubeData = [];
+
+final List<Map<String, dynamic>> youtubeenddrawerDetail = [
+  {
+    'icon': Icons.person_pin_outlined,
+    'iconName': 'Your channel',
+  },
+  {
+    'icon': Icons.perm_contact_cal_sharp,
+    'iconName': 'Tuen on Incognito',
+  },
+  {
+    'icon': Icons.person_add_outlined,
+    'iconName': 'Add account',
+  },
+  {},
+  {
+    'icon': Icons.workspace_premium_outlined,
+    'iconName': 'Get YouTube Premium',
+  },
+  {
+    'icon': Icons.attach_money,
+    'iconName': 'Purchases and memberships',
+  },
+  {
+    'icon': Icons.av_timer,
+    'iconName': 'Time watched',
+  },
+  {
+    'icon': Icons.person_pin_circle,
+    'iconName': 'Your data in YouTube',
+  },
+  {},
+  {
+    'icon': Icons.settings,
+    'iconName': 'Settings',
+  },
+  {
+    'icon': Icons.help_outline_outlined,
+    'iconName': 'Help & feedback',
+  },
+  {},
+  {
+    'icon': Icons.spatial_audio_off,
+    'iconName': 'YouTube Studio',
+  },
+  {
+    'icon': Icons.music_note_outlined,
+    'iconName': 'YouTube Music',
+  },
+  {
+    'icon': Icons.kitesurfing_rounded,
+    'iconName': 'YouTube Kids',
+  },
+];
+List<YoutubeendDrawerBottomSheet> youtubeenddrawerData = [];

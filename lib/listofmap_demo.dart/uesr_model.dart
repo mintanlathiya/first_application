@@ -117,3 +117,96 @@ class GmailDrawer {
     return data;
   }
 }
+
+class GmailPageDrawer {
+  IconData? icon;
+  String? acName, message, messageNumber, acSymbol, secMessage, messageDate;
+  GmailPageDrawer(
+      {this.icon,
+      this.acName,
+      this.message,
+      this.messageNumber,
+      this.acSymbol,
+      this.secMessage,
+      this.messageDate});
+  factory GmailPageDrawer.fromJson(Map<String, dynamic> json) =>
+      GmailPageDrawer(
+        icon: json['icon'],
+        acName: json['acName'],
+        message: json['message'],
+        messageNumber: json['messageNumber'],
+        acSymbol: json['acSymbol'],
+        secMessage: json['secMessage'],
+        messageDate: json['messageDate'],
+      );
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> data = {};
+    if (icon != null) {
+      data['icon'] = icon;
+    }
+    if (acName != null) {
+      data['acName'] = acName;
+    }
+    if (message != null) {
+      data['message'] = message;
+    }
+    if (messageNumber != null) {
+      data['messageNumber'] = messageNumber;
+    }
+    if (acSymbol != null) {
+      data['acSymbol'] = acSymbol;
+    }
+    if (secMessage != null) {
+      data['secMessage'] = secMessage;
+    }
+    if (messageDate != null) {
+      data['messageDate'] = messageDate;
+    }
+
+    return data;
+  }
+}
+
+class YoutubeBottomSheet {
+  IconData? icon;
+  String? iconName, messageNumber;
+  YoutubeBottomSheet({this.icon, this.iconName, this.messageNumber});
+  factory YoutubeBottomSheet.fromJson(Map<String, dynamic> json) =>
+      YoutubeBottomSheet(
+        icon: json['icon'],
+        iconName: json['iconName'],
+      );
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> data = {};
+    if (icon != null) {
+      data['icon'] = icon;
+    }
+    if (iconName != null) {
+      data['iconName'] = iconName;
+    }
+
+    return data;
+  }
+}
+
+class YoutubeendDrawerBottomSheet {
+  IconData? icon;
+  String? iconName;
+  YoutubeendDrawerBottomSheet({this.icon, this.iconName});
+  factory YoutubeendDrawerBottomSheet.fromJson(Map<String, dynamic> json) =>
+      YoutubeendDrawerBottomSheet(
+        icon: json['icon'],
+        iconName: json['iconName'],
+      );
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> data = {};
+    if (icon != null) {
+      data['icon'] = icon;
+    }
+    if (iconName != null) {
+      data['iconName'] = iconName;
+    }
+
+    return data;
+  }
+}
