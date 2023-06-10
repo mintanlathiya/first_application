@@ -15,6 +15,7 @@ class GridViewDemo extends StatelessWidget {
               crossAxisCount: 2,
               mainAxisSpacing: 5,
               crossAxisSpacing: 5,
+              
             ),
             children: List.generate(
                 gridData.length,

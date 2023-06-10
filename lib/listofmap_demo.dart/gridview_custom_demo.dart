@@ -7,29 +7,23 @@ class GridViewCustomDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: GridView.custom(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3),
-              childrenDelegate: SliverChildBuilderDelegate(
-                (context, index) => Container(
-                  color: Colors.pink,
-                  child: Column(
-                    children: [
-                      Icon(gridData[index]['icon']),
-                      Text(
-                        gridData[index]['name'],
-                      )
-                    ],
-                  ),
-                ),
-                childCount: gridData.length,
-              ),
+      body: GridView.custom(
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        childrenDelegate: SliverChildBuilderDelegate(
+          (context, index) => Container(
+            color: Colors.pink,
+            child: Column(
+              children: [
+                Icon(gridData[index]['icon']),
+                Text(
+                  gridData[index]['name'],
+                )
+              ],
             ),
           ),
-        ],
+          childCount: gridData.length,
+        ),
       ),
     );
   }

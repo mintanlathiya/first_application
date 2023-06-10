@@ -594,3 +594,33 @@ final List<Map> gridData = [
     'name': 'shop',
   },
 ];
+
+final List<Map<String, dynamic>> colorList = [
+  {
+    'color': Colors.red,
+  },
+  {
+    'color': Colors.yellow,
+  },
+  {
+    'color': Colors.black,
+  },
+  {
+    'color': Colors.blue,
+  },
+  {
+    'color': Colors.brown,
+  },
+  {
+    'colos': Colors.blueAccent,
+  },
+  {
+    'color': Colors.orange,
+  },
+  {
+    'colors': Colors.green,
+  },
+  {
+    'colors': Colors.grey,
+  },
+];
