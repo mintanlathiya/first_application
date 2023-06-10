@@ -13,7 +13,7 @@ class ListViewDemo extends StatelessWidget {
         // physics: const BouncingScrollPhysics(),
         // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         // dragStartBehavior: DragStartBehavior.start,
-        //itemExtent: 50,
+        // itemExtent: 50,
         // padding: const EdgeInsets.all(20),
         // primary: true,
         // reverse: true,

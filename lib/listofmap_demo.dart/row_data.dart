@@ -485,3 +485,112 @@ final List<Map<String, dynamic>> youtubeenddrawerDetail = [
   },
 ];
 List<YoutubeendDrawerBottomSheet> youtubeenddrawerData = [];
+
+final List<Map<String, dynamic>> youtubePageApi = [
+  {
+    'url': 'assets/images/21.jpeg',
+    'subName': 'Eiffel Tower \n sparkling⭐',
+    'views': '65k',
+  },
+  {
+    'url': 'assets/images/22.jpeg',
+    'subName': 'Rome tour \n Italy 2023',
+    'views': '6.5M',
+  },
+  {
+    'url': 'assets/images/23.jpeg',
+    'subName': 'Spain Travel \n Best Place',
+    'views': '45k',
+  },
+  {
+    'url': 'assets/images/24.jpeg',
+    'subName': 'Holiday in Bali \n visit in Bali',
+    'views': '779k',
+  },
+  {
+    'url': 'assets/images/25.jpeg',
+    'subName': '5 place to visit \n in Spain 2021',
+    'views': '51k',
+  },
+  {
+    'url': 'assets/images/21.jpeg',
+    'subName': 'Eiffel Tower \n Tour⭐',
+    'views': '48k',
+  },
+];
+List<YoutubePageDetail> youtubePageData = [];
+
+final List<Map<String, dynamic>> youtubeVideoPageApi = [
+  {
+    'videoProfile': 'assets/images/26.jpeg',
+    'videoTime': '9:09',
+    'acProfile': 'assets/images/3.jpeg',
+    'subName':
+        'Is  this  most  beautiful  building  in  the \n world? - Stephanie  Honchell  Smith',
+    'channelName': 'TED_Ed - ',
+    'views': '506k views - ',
+    'durationTime': '6 months ago',
+  },
+  {
+    'videoProfile': 'assets/images/21.jpeg',
+    'videoTime': '8:05',
+    'acProfile': 'assets/images/4.jpeg',
+    'subName':
+        'EIFFEL  TOWER  AT  NIGHT, Paris  France \n Eiffel  Tower  sparkling  &  twinkling  at  ni...',
+    'channelName': 'Jean_ Luc Ichard - ',
+    'views': '1.1M views - ',
+    'durationTime': '5 years ago',
+  },
+];
+List<YoutubeVideoPageDetail> youtubeVideoPageData = [];
+
+final List<Map> gridData = [
+  {
+    'icon': Icons.add,
+    'name': 'add',
+  },
+  {
+    'icon': Icons.wallet,
+    'name': 'wallet',
+  },
+  {
+    'icon': Icons.search,
+    'name': 'search',
+  },
+  {
+    'icon': Icons.circle,
+    'name': 'circle',
+  },
+  {
+    'icon': Icons.alarm,
+    'name': 'alarm',
+  },
+  {
+    'icon': Icons.circle,
+    'name': 'circle',
+  },
+  {
+    'icon': Icons.alarm,
+    'name': 'alarm',
+  },
+  {
+    'icon': Icons.copy,
+    'name': 'copy',
+  },
+  {
+    'icon': Icons.arrow_back,
+    'name': 'arrow_back',
+  },
+  {
+    'icon': Icons.arrow_forward,
+    'name': 'arrow_forward',
+  },
+  {
+    'icon': Icons.share,
+    'name': 'share',
+  },
+  {
+    'icon': Icons.shop,
+    'name': 'shop',
+  },
+];

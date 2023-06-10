@@ -201,3 +201,86 @@ class YoutubeendDrawerBottomSheet {
     return data;
   }
 }
+
+class YoutubePageDetail {
+  String? url, subName, views;
+  YoutubePageDetail({this.url, this.subName, this.views});
+  factory YoutubePageDetail.fromJson(Map<String, dynamic> json) =>
+      YoutubePageDetail(
+        url: json['url'],
+        subName: json['subName'],
+        views: json['views'],
+      );
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> data = {};
+    if (url != null) {
+      data['url'] = url;
+    }
+    if (subName != null) {
+      data['subName'] = subName;
+    }
+    if (views != null) {
+      data['views'] = views;
+    }
+
+    return data;
+  }
+}
+
+class YoutubeVideoPageDetail {
+  String? videoProfile,
+      videoTime,
+      acProfile,
+      subName,
+      channelName,
+      views,
+      durationTime,
+      advertise;
+  YoutubeVideoPageDetail({
+    this.videoProfile,
+    this.videoTime,
+    this.acProfile,
+    this.subName,
+    this.channelName,
+    this.views,
+    this.durationTime,
+  });
+  factory YoutubeVideoPageDetail.fromJson(Map<String, dynamic> json) =>
+      YoutubeVideoPageDetail(
+        videoProfile: json['videoProfile'],
+        videoTime: json['videoTime'],
+        acProfile: json['acProfile'],
+        subName: json['subName'],
+        channelName: json['channelName'],
+        views: json['views'],
+        durationTime: json['durationTime'],
+      );
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> data = {};
+    if (videoProfile != null) {
+      data['videoProfile'] = videoProfile;
+    }
+    if (videoTime != null) {
+      data['videoTime'] = videoTime;
+    }
+    if (acProfile != null) {
+      data['acProfile'] = acProfile;
+    }
+    if (subName != null) {
+      data['subName'] = subName;
+    }
+
+    if (channelName != null) {
+      data['channelName'] = channelName;
+    }
+    if (views != null) {
+      data['views'] = views;
+    }
+
+    if (durationTime != null) {
+      data['durationTime'] = durationTime;
+    }
+
+    return data;
+  }
+}

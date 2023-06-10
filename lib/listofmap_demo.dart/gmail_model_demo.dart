@@ -32,156 +32,147 @@ class GmailModelDemo extends StatelessWidget {
         ],
       ),
       drawer: Drawer(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 20),
-                child: Text(
-                  'Gmail',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red,
-                    fontSize: 30,
-                  ),
+        child: ListView(
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Text(
+                'Gmail',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red,
+                  fontSize: 30,
                 ),
               ),
-              const Divider(
-                thickness: 2,
-              ),
-              ...List.generate(gmailDrawerData.length, (index) {
-                if (gmailDrawerData[index].iconName == null) {
-                  return const Divider();
-                } else if (gmailDrawerData[index].icon == null) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(gmailDrawerData[index].iconName!),
-                  );
-                } else if (gmailDrawerData[index].messageNumber == null) {
-                  return ListTile(
-                    leading: Icon(gmailDrawerData[index].icon!),
-                    title: Text(gmailDrawerData[index].iconName!),
-                  );
-                } else {
-                  return ListTile(
-                    leading: Icon(gmailDrawerData[index].icon!),
-                    title: Text(gmailDrawerData[index].iconName!),
-                    trailing: Text(gmailDrawerData[index].messageNumber!),
-                  );
-                }
-              }),
-            ],
-          ),
+            ),
+            const Divider(
+              thickness: 2,
+            ),
+            ...List.generate(gmailDrawerData.length, (index) {
+              if (gmailDrawerData[index].iconName == null) {
+                return const Divider();
+              } else if (gmailDrawerData[index].icon == null) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(gmailDrawerData[index].iconName!),
+                );
+              } else if (gmailDrawerData[index].messageNumber == null) {
+                return ListTile(
+                  leading: Icon(gmailDrawerData[index].icon!),
+                  title: Text(gmailDrawerData[index].iconName!),
+                );
+              } else {
+                return ListTile(
+                  leading: Icon(gmailDrawerData[index].icon!),
+                  title: Text(gmailDrawerData[index].iconName!),
+                  trailing: Text(gmailDrawerData[index].messageNumber!),
+                );
+              }
+            }),
+          ],
         ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('primary'),
-              ...List.generate(gmailPageData.length, (index) {
-                if (gmailPageData[index].messageDate == null) {
-                  return ListTile(
-                      leading: Icon(
-                        gmailPageData[index].icon!,
-                        color: Colors.deepPurple,
-                        size: 40,
+        child: ListView(
+          children: [
+            const Text('primary'),
+            ...List.generate(gmailPageData.length, (index) {
+              if (gmailPageData[index].messageDate == null) {
+                return ListTile(
+                    leading: Icon(
+                      gmailPageData[index].icon!,
+                      color: Colors.deepPurple,
+                      size: 40,
+                    ),
+                    title: Text(
+                      gmailPageData[index].senderName!,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
                       ),
-                      title: Text(
-                        gmailPageData[index].senderName!,
+                    ),
+                    subtitle: Text(
+                      gmailPageData[index].subName!,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    trailing: Container(
+                      height: 28,
+                      width: 55,
+                      alignment: Alignment.center,
+                      decoration: const BoxDecoration(
+                          color: Colors.greenAccent,
+                          borderRadius: BorderRadius.all(Radius.circular(30))),
+                      child: Text(
+                        gmailPageData[index].messageNumber!,
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      subtitle: Text(
-                        gmailPageData[index].subName!,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      trailing: Container(
-                        height: 28,
-                        width: 55,
-                        alignment: Alignment.center,
-                        decoration: const BoxDecoration(
-                            color: Colors.greenAccent,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
-                        child: Text(
-                          gmailPageData[index].messageNumber!,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ));
-                } else {
-                  return InkWell(
-                    onTap: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(12),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.amber,
-                            child: Text(
-                              gmailPageData[index]
-                                  .senderName!
-                                  .characters
-                                  .first
-                                  .toUpperCase(),
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 25,
-                                color: Colors.white,
-                              ),
+                    ));
+              } else {
+                return InkWell(
+                  onTap: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.amber,
+                          child: Text(
+                            gmailPageData[index]
+                                .senderName!
+                                .characters
+                                .first
+                                .toUpperCase(),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                              color: Colors.white,
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(15),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                gmailPageData[index].senderName!,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                gmailPageData[index].subName!,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const Spacer(),
-                        Column(
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              gmailPageData[index].messageDate!,
+                              gmailPageData[index].senderName!,
                               style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Icon(gmailPageData[index].icon!),
+                            Text(
+                              gmailPageData[index].subName!,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
-                      ],
-                    ),
-                  );
-                }
-              }),
-            ],
-          ),
+                      ),
+                      const Spacer(),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            gmailPageData[index].messageDate!,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Icon(gmailPageData[index].icon!),
+                        ],
+                      ),
+                    ],
+                  ),
+                );
+              }
+            }),
+          ],
         ),
       ),
       bottomNavigationBar: Container(

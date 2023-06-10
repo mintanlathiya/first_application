@@ -13,6 +13,12 @@ class YoutubeModelDemo extends StatelessWidget {
     for (var element in youtubeenddrawerDetail) {
       youtubeenddrawerData.add(YoutubeendDrawerBottomSheet.fromJson(element));
     }
+    for (var element in youtubePageApi) {
+      youtubePageData.add(YoutubePageDetail.fromJson(element));
+    }
+    for (var element in youtubeVideoPageApi) {
+      youtubeVideoPageData.add(YoutubeVideoPageDetail.fromJson(element));
+    }
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 232, 226, 226),
       appBar: AppBar(
@@ -279,487 +285,246 @@ class YoutubeModelDemo extends StatelessWidget {
               ),
             )),
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            children: [
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  height: 200,
-                  width: 800,
-                  padding: const EdgeInsets.all(8),
-                  alignment: Alignment.bottomRight,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/34.jpeg'),
-                    ),
-                  ),
-                  child: Container(
-                    height: 20,
-                    width: 50,
-                    color: Colors.black,
-                    alignment: Alignment.center,
-                    child: const Text(
-                      '0:00',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/34.jpeg'),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Share Your Favorite Finds with Friends',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            'Find a favorite on facebook marketplace.',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            'AD - Facebook',
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Icon(Icons.more_vert),
-                  ],
-                ),
-              ),
-              InkWell(
-                onTap: () {},
-                splashColor: Colors.white,
-                child: Container(
-                  margin: const EdgeInsets.all(20),
-                  height: 40,
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 52, 21, 104),
-                    borderRadius: BorderRadius.all(Radius.circular(40)),
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Download  ',
-                        style: TextStyle(
-                          color: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: ListView(
+          children: [
+            Container(
+              height: 378,
+              width: 620,
+              color: Colors.transparent,
+              child: Column(
+                children: [
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      height: 200,
+                      width: 800,
+                      padding: const EdgeInsets.all(8),
+                      alignment: Alignment.bottomRight,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/34.jpeg'),
                         ),
                       ),
-                      Icon(
-                        Icons.addchart_rounded,
-                        color: Colors.white,
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                height: 200,
-                width: 800,
-                padding: const EdgeInsets.all(8),
-                alignment: Alignment.bottomRight,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/26.jpeg'),
-                        fit: BoxFit.fill)),
-                child: Container(
-                  height: 20,
-                  width: 50,
-                  color: Colors.black,
-                  alignment: Alignment.center,
-                  child: const Text(
-                    '9:09',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/26.jpeg'),
+                      child: Container(
+                        height: 20,
+                        width: 50,
+                        color: Colors.black,
+                        alignment: Alignment.center,
+                        child: const Text(
+                          '0:00',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          backgroundImage: AssetImage('assets/images/34.jpeg'),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(15),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Share Your Favorite Finds with Friends',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'Find a favorite on facebook marketplace.',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'AD - Facebook',
+                              ),
+                            ],
+                          ),
+                        ),
+                        Spacer(),
+                        Icon(Icons.more_vert),
+                      ],
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    splashColor: Colors.white,
+                    child: Container(
+                      margin: const EdgeInsets.all(20),
+                      height: 40,
+                      alignment: Alignment.center,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 52, 21, 104),
+                        borderRadius: BorderRadius.all(Radius.circular(40)),
+                      ),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Is  this  most  beautiful  building  in  the',
+                            'Download  ',
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
                             ),
                           ),
-                          Text(
-                            'world? - Stephanie  Honchell  Smith',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            'TED_Ed - 506K views - 6 months ago',
-                          ),
+                          Icon(
+                            Icons.addchart_rounded,
+                            color: Colors.white,
+                          )
                         ],
                       ),
                     ),
-                    Spacer(),
-                    Icon(Icons.more_vert),
-                  ],
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(8),
-                height: 200,
-                width: 800,
-                alignment: Alignment.bottomRight,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/21.jpeg'),
-                        fit: BoxFit.fill)),
-                child: Container(
-                  height: 20,
-                  width: 50,
-                  color: Colors.black,
-                  alignment: Alignment.center,
-                  child: const Text(
-                    '8:05',
-                    style: TextStyle(color: Colors.white),
                   ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/21.jpeg'),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'EIFFEL  TOWER  AT  NIGHT, Paris  France',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            '(Eiffel  Tower  sparkling  &  twinkling  at  ni...',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            'Jean_ Luc Ichard - 1.1M views - 5 years ago',
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Icon(Icons.more_vert),
-                  ],
-                ),
-              ),
-              const Row(
-                children: [
-                  Icon(
-                    Icons.local_play_outlined,
-                    color: Colors.red,
-                    size: 30,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    'Shorts',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
                 ],
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
+            ),
+            ...List.generate(
+              youtubeVideoPageData.length,
+              (index) => Container(
+                height: 298,
+                width: 610,
+                color: Colors.transparent,
+                child: Column(
                   children: [
                     Container(
-                      height: 270,
-                      width: 180,
-                      margin: const EdgeInsets.only(top: 5, right: 15),
-                      alignment: Alignment.bottomCenter,
-                      decoration: const BoxDecoration(
+                      height: 200,
+                      alignment: Alignment.bottomRight,
+                      decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage('assets/images/21.jpeg'),
-                            fit: BoxFit.fill,
-                          ),
-                          color: Color.fromARGB(255, 231, 223, 223),
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 150),
-                              child: Icon(
-                                Icons.more_vert,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Spacer(),
-                            Text(
-                              'Eiffel Tower',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'sparkling⭐',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              '65k views',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
+                              image: AssetImage(
+                                  youtubeVideoPageData[index].videoProfile!),
+                              fit: BoxFit.fill)),
+                      child: Container(
+                        height: 20,
+                        width: 50,
+                        color: Colors.black,
+                        alignment: Alignment.center,
+                        child: Text(
+                          youtubeVideoPageData[index].videoTime!,
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
-                    Container(
-                      height: 270,
-                      width: 180,
-                      margin: const EdgeInsets.only(top: 5, right: 15),
-                      alignment: Alignment.bottomCenter,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/22.jpeg'),
-                            fit: BoxFit.fill,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage: AssetImage(
+                                youtubeVideoPageData[index].acProfile!),
                           ),
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 150),
-                              child: Icon(
-                                Icons.more_vert,
-                                color: Colors.white,
-                              ),
+                          Padding(
+                            padding: const EdgeInsets.all(15),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  youtubeVideoPageData[index].subName!,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Row(
+                                  children: [
+                                    Text(youtubeVideoPageData[index]
+                                        .channelName!),
+                                    Text(youtubeVideoPageData[index].views!),
+                                    Text(youtubeVideoPageData[index]
+                                        .durationTime!),
+                                  ],
+                                ),
+                              ],
                             ),
-                            Spacer(),
-                            Text(
-                              'Rome tour',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'Italy 2023',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              '6.5M views',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 270,
-                      width: 180,
-                      margin: const EdgeInsets.only(top: 5, right: 15),
-                      alignment: Alignment.bottomCenter,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/23.jpeg'),
-                            fit: BoxFit.fill,
                           ),
-                          color: Color.fromARGB(255, 231, 223, 223),
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 150),
-                              child: Icon(
-                                Icons.more_vert,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Spacer(),
-                            Text(
-                              'Spain Travel',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'Best Place',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              '45k views',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 270,
-                      width: 180,
-                      margin: const EdgeInsets.only(top: 5, right: 15),
-                      alignment: Alignment.bottomCenter,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/24.jpeg'),
-                            fit: BoxFit.fill,
-                          ),
-                          color: Color.fromARGB(255, 231, 223, 223),
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 150),
-                              child: Icon(
-                                Icons.more_vert,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Spacer(),
-                            Text(
-                              'Holiday in Bali',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'visit in Bali',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              '779k views',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 270,
-                      width: 180,
-                      margin: const EdgeInsets.only(top: 5, right: 15),
-                      alignment: Alignment.bottomCenter,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/25.jpeg'),
-                            fit: BoxFit.fill,
-                          ),
-                          color: Color.fromARGB(255, 231, 223, 223),
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 150),
-                              child: Icon(
-                                Icons.more_vert,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Spacer(),
-                            Text(
-                              '5 place to visit',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'in Spain 2021',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              '51k views',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
+                          const Spacer(),
+                          const Icon(Icons.more_vert),
+                        ],
                       ),
                     ),
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+            const Row(
+              children: [
+                Icon(
+                  Icons.local_play_outlined,
+                  color: Colors.red,
+                  size: 30,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'Shorts',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                  youtubePageData.length,
+                  (index) => Container(
+                    height: 270,
+                    width: 180,
+                    margin: const EdgeInsets.only(top: 5, right: 15),
+                    alignment: Alignment.bottomCenter,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(youtubePageData[index].url!),
+                          fit: BoxFit.fill,
+                        ),
+                        color: const Color.fromARGB(255, 231, 223, 223),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10))),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(left: 150),
+                            child: Icon(
+                              Icons.more_vert,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            youtubePageData[index].subName!,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            youtubePageData[index].views!,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
       ),
       bottomNavigationBar: Container(
