@@ -1,4 +1,4 @@
-import 'package:first_application/listofmap_demo.dart/row_data.dart';
+import 'package:first_application/statefullexample/counter.controller.dart';
 import 'package:flutter/material.dart';
 
 class GridViewColor extends StatefulWidget {
@@ -9,6 +9,7 @@ class GridViewColor extends StatefulWidget {
 }
 
 class _GridViewColorState extends State<GridViewColor> {
+  bool click = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +24,14 @@ class _GridViewColorState extends State<GridViewColor> {
                 ),
                 children: List.generate(
                     colorList.length,
-                    (index) => Container(
-                          color: colorList[index]['color'],
+                    (index) => InkWell(
+                          onTap: () {
+                            ColorSwap.colorController(index);
+                            setState(() {});
+                          },
+                          child: Container(
+                            color: colorList[index],
+                          ),
                         ))),
           )
         ],

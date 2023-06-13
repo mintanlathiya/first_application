@@ -14,8 +14,8 @@ class _CounterAppDemoState extends State<CounterAppDemo> {
     return Scaffold(
       body: Center(
         child: Container(
-          height: 150,
-          width: 250,
+          height: 220,
+          width: 350,
           color: Colors.transparent,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -23,25 +23,31 @@ class _CounterAppDemoState extends State<CounterAppDemo> {
               Row(
                 children: [
                   Container(
-                    height: 60,
-                    width: 60,
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    height: 80,
+                    width: 80,
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.all(Radius.circular(30))),
                     child: IconButton(
-                        onPressed: () {
-                          Counter1.decrease1();
-                          setState(() {});
-                        },
-                        icon: const Icon(Icons.minimize)),
+                      onPressed: () {
+                        Counter1.decrease1();
+                        setState(() {});
+                      },
+                      icon: const Icon(Icons.minimize),
+                      iconSize: 50,
+                      padding: const EdgeInsets.only(bottom: 25),
+                    ),
                   ),
-                  Text(Counter1.add.toString()),
+                  Text(
+                    Counter1.add.toString(),
+                    style: const TextStyle(fontSize: 50),
+                  ),
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
-                    height: 60,
-                    width: 60,
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    height: 80,
+                    width: 80,
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
                         color: Colors.green,
@@ -51,7 +57,8 @@ class _CounterAppDemoState extends State<CounterAppDemo> {
                           Counter1.increment1();
                           setState(() {});
                         },
-                        icon: const Icon(Icons.add)),
+                        icon: const Icon(Icons.add),
+                        iconSize: 50),
                   ),
                 ],
               ),
@@ -59,35 +66,44 @@ class _CounterAppDemoState extends State<CounterAppDemo> {
               Row(
                 children: [
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
-                    height: 60,
-                    width: 60,
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    height: 80,
+                    width: 80,
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.all(Radius.circular(30))),
                     child: IconButton(
-                        onPressed: () {
-                          Counter1.decrease2();
-                          setState(() {});
-                        },
-                        icon: const Icon(Icons.minimize)),
+                      onPressed: () {
+                        Counter1.decrease2();
+                        setState(() {});
+                      },
+                      icon: const Icon(Icons.minimize),
+                      iconSize: 50,
+                      padding: const EdgeInsets.only(bottom: 25),
+                      splashColor: Colors.amber,
+                    ),
                   ),
-                  Text(Counter1.sub.toString()),
+                  Text(
+                    Counter1.sub.toString(),
+                    style: const TextStyle(fontSize: 50),
+                  ),
                   Container(
-                    height: 60,
-                    width: 60,
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    height: 80,
+                    width: 80,
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.all(Radius.circular(30))),
                     child: IconButton(
-                        onPressed: () {
-                          Counter1.increment2();
-                          setState(() {});
-                        },
-                        icon: const Icon(Icons.add)),
+                      onPressed: () {
+                        Counter1.increment2();
+                        setState(() {});
+                      },
+                      icon: const Icon(Icons.add),
+                      iconSize: 50,
+                    ),
                   )
                 ],
               ),
