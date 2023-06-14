@@ -27,7 +27,7 @@ class _TicTacDemoUiState extends State<TicTacDemoUi> {
                       style: TextStyle(fontSize: 45),
                     ),
                     Text(
-                      'Score ${oScore.toString()}',
+                      'Score ${TikTacmethod.oScore.toString()}',
                       style: const TextStyle(fontSize: 45),
                     ),
                   ],
@@ -39,7 +39,7 @@ class _TicTacDemoUiState extends State<TicTacDemoUi> {
                       style: TextStyle(fontSize: 45),
                     ),
                     Text(
-                      'Score ${xScore.toString()}',
+                      'Score ${TikTacmethod.xScore.toString()}',
                       style: const TextStyle(fontSize: 45),
                     ),
                   ],
@@ -53,7 +53,7 @@ class _TicTacDemoUiState extends State<TicTacDemoUi> {
                   crossAxisCount: 3, mainAxisSpacing: 5, crossAxisSpacing: 5),
               itemBuilder: (context, index) => InkWell(
                 onTap: () {
-                  tapped(index, context);
+                  TikTacmethod.tapped(index, context);
                   setState(() {});
                 },
                 child: Container(
@@ -67,8 +67,7 @@ class _TicTacDemoUiState extends State<TicTacDemoUi> {
                       borderRadius:
                           const BorderRadius.all(Radius.circular(20))),
                   child: Text(
-                    displayElement[index],
-
+                   TikTacmethod.displayElement[index],
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 80,
@@ -89,7 +88,7 @@ class _TicTacDemoUiState extends State<TicTacDemoUi> {
                       side: BorderSide(),
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   onPressed: () {
-                    clearScoreBoard();
+                    TikTacmethod.clearScoreBoard();
                     setState(() {});
                   },
                   child: const Text(
@@ -109,7 +108,7 @@ class _TicTacDemoUiState extends State<TicTacDemoUi> {
                       side: BorderSide(),
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   onPressed: () {
-                    clearBoard();
+                    TikTacmethod.clearBoard();
 
                     setState(() {});
                   },

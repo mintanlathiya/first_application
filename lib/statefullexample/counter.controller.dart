@@ -184,16 +184,17 @@ class TicToeTac {
   }
 }
 
+///////////////////////////////////////////////////2 metod tik tav///////////////
+class TikTacmethod {
+  static bool oTurn = true;
 
-  bool oTurn = true;
+  static List displayElement = ['', '', '', '', '', '', '', '', ''];
 
-  List displayElement = ['', '', '', '', '', '', '', '', ''];
+  static int oScore = 0;
+  static int xScore = 0;
+  static int filledBoxes = 0;
 
-  int oScore = 0;
-  int xScore = 0;
-  int filledBoxes = 0;
-
-  void tapped(int index, context) {
+  static void tapped(int index, context) {
     if (oTurn && displayElement[index] == '') {
       displayElement[index] = 'O';
       filledBoxes++;
@@ -206,7 +207,7 @@ class TicToeTac {
     _checkWinner(context);
   }
 
-  void _checkWinner(context) {
+  static void _checkWinner(context) {
     // Checking rows
     if (displayElement[0] == displayElement[1] &&
         displayElement[0] == displayElement[2] &&
@@ -265,7 +266,7 @@ class TicToeTac {
     }
   }
 
-  void _showWinDialog(String winner, context) {
+  static void _showWinDialog(String winner, context) {
     showDialog(
         barrierDismissible: false,
         context: context,
@@ -290,7 +291,7 @@ class TicToeTac {
     }
   }
 
-  void _showDrawDialog(context) {
+  static void _showDrawDialog(context) {
     showDialog(
         barrierDismissible: false,
         context: context,
@@ -310,7 +311,7 @@ class TicToeTac {
         });
   }
 
-  void clearBoard() {
+  static void clearBoard() {
     for (int i = 0; i < 9; i++) {
       displayElement[i] = '';
     }
@@ -318,7 +319,7 @@ class TicToeTac {
     filledBoxes = 0;
   }
 
-  void clearScoreBoard() {
+  static void clearScoreBoard() {
     xScore = 0;
     oScore = 0;
     for (int i = 0; i < 9; i++) {
@@ -327,4 +328,4 @@ class TicToeTac {
 
     filledBoxes = 0;
   }
-
+}
