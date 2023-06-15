@@ -48,6 +48,7 @@ class _TicTacDemoUiState extends State<TicTacDemoUi> {
             ),
             Expanded(
                 child: GridView.builder(
+              shrinkWrap: true,
               itemCount: 9,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3, mainAxisSpacing: 5, crossAxisSpacing: 5),
@@ -56,22 +57,21 @@ class _TicTacDemoUiState extends State<TicTacDemoUi> {
                   TikTacmethod.tapped(index, context);
                   setState(() {});
                 },
-                child: Container(
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
+                child: Card(
+                  color: TikTacmethod.cardColor[index],
+                  elevation: 2,
+                  shape: Border.all(
+                    color: Colors.black,
+                    width: 2,
+                  ),
+                  child: Center(
+                    child: Text(
+                      TikTacmethod.displayElement[index],
+                      style: const TextStyle(
+                        fontSize: 40,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
-                      color: Colors.red,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(20))),
-                  child: Text(
-                   TikTacmethod.displayElement[index],
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 80,
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -92,7 +92,7 @@ class _TicTacDemoUiState extends State<TicTacDemoUi> {
                     setState(() {});
                   },
                   child: const Text(
-                    " clear Score Board",
+                    " Clear Score Board",
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,

@@ -1,4 +1,4 @@
-import 'package:first_application/stateful_practice/tictacdemo.dart';
+import 'package:first_application/stateful_practice/tictoedemo1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TicTacDemoUi(),
+      home: TicToeDemo(),
     );
   }
 }
