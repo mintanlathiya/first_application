@@ -72,9 +72,11 @@ class AppBarUiDemo extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       bottomNavigationBar: BottomNavigationBar(
         items: const [
+
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'home',
+            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.call),

@@ -109,7 +109,7 @@ class CrossColor {
   }
 }
 
-//////////////
+///////////////////////////////////
 List value = List.generate(9, (index) => "");
 List<Color> cardColor = List.generate(9, (index) => Colors.grey);
 bool xTurn = false; // true means player O
@@ -366,3 +366,6 @@ class TikTacmethod {
     filledBoxes = 0;
   }
 }
+//////////////////////////////////
+
+
