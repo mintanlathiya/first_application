@@ -398,9 +398,25 @@ class OnSubmit {
     if (isDance) {
       selectedHobbies.add('dance');
     }
+    if (isSubmitted == true) {
+      selectedHobbies.clear();
+      isCricket = false;
+      isFootball = false;
+      isCooking = false;
+      isSwimming = false;
+      isDance = false;
+      selectedGender = '';
+    }
   }
 
-  static void clearMethod() {
-    selectedHobbies.clear();
+  static void clearHobbiesList() {
+    if (isSubmitted == false) {
+      selectedHobbies.clear();
+      isCricket = false;
+      isFootball = false;
+      isCooking = false;
+      isSwimming = false;
+      isDance = false;
+    }
   }
 }

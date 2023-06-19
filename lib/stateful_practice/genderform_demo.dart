@@ -34,7 +34,7 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                     onTap: () {
                       OnSubmit.selectedGender = OnSubmit.male;
                       OnSubmit.isSubmitted = false;
-                      OnSubmit.clearMethod();
+                      OnSubmit.clearHobbiesList();
                       setState(() {});
                     },
                     child: Card(
@@ -48,8 +48,10 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                             border: Border.all(
-                          width: 2,
-                          color: Colors.black,
+                          width: 3,
+                          color: OnSubmit.selectedGender == 'male'
+                              ? Colors.brown
+                              : Colors.black,
                         )),
                         child: const Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -71,8 +73,7 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                     onTap: () {
                       OnSubmit.selectedGender = OnSubmit.female;
                       OnSubmit.isSubmitted = false;
-                      OnSubmit.clearMethod();
-
+                      OnSubmit.clearHobbiesList();
                       setState(() {});
                     },
                     child: Card(
@@ -86,8 +87,10 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                             border: Border.all(
-                          width: 2,
-                          color: Colors.black,
+                          width: 3,
+                          color: OnSubmit.selectedGender == 'female'
+                              ? Colors.brown
+                              : Colors.black,
                         )),
                         child: const Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -260,14 +263,22 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
             Center(
               child: MaterialButton(
                 onPressed: () {
-                  OnSubmit.selectedGender;
                   OnSubmit.hobbyDetails();
+                  OnSubmit.selectedGender;
+
                   OnSubmit.isSubmitted = !OnSubmit.isSubmitted;
+
                   setState(() {});
                 },
                 color: Colors.white,
-                shape: const BeveledRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                shape: BeveledRectangleBorder(
+                    side: OnSubmit.isSubmitted
+                        ? const BorderSide(
+                            color: Colors.brown,
+                            width: 3,
+                          )
+                        : const BorderSide(),
+                    borderRadius: const BorderRadius.all(Radius.circular(20))),
                 height: 80,
                 minWidth: 160,
                 child: const Text(
