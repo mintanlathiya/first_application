@@ -409,7 +409,7 @@ class OnSubmit {
     }
   }
 
-  static void clearHobbiesList() {
+  static void clearMethod() {
     if (isSubmitted == false) {
       selectedHobbies.clear();
       isCricket = false;

@@ -34,7 +34,7 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                     onTap: () {
                       OnSubmit.selectedGender = OnSubmit.male;
                       OnSubmit.isSubmitted = false;
-                      OnSubmit.clearHobbiesList();
+                      OnSubmit.clearMethod();
                       setState(() {});
                     },
                     child: Card(
@@ -73,13 +73,13 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                     onTap: () {
                       OnSubmit.selectedGender = OnSubmit.female;
                       OnSubmit.isSubmitted = false;
-                      OnSubmit.clearHobbiesList();
+                      OnSubmit.clearMethod();
                       setState(() {});
                     },
                     child: Card(
                       elevation: (OnSubmit.selectedGender == 'female') ? 30 : 0,
                       color: (OnSubmit.selectedGender == 'female')
-                          ? Colors.blue
+                          ? Colors.pink
                           : Colors.white,
                       child: Container(
                         height: 80,
@@ -133,7 +133,7 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                   width: 80,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: OnSubmit.isCricket ? Colors.blue : Colors.white,
+                    color: OnSubmit.isCricket ? Colors.orange : Colors.white,
                     border: Border.all(
                       width: 2,
                       color: Colors.black,
@@ -161,7 +161,7 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                   width: 80,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: OnSubmit.isFootball ? Colors.blue : Colors.white,
+                    color: OnSubmit.isFootball ? Colors.purple : Colors.white,
                     border: Border.all(
                       width: 2,
                       color: Colors.black,
@@ -189,7 +189,7 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                   width: 80,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: OnSubmit.isCooking ? Colors.blue : Colors.white,
+                    color: OnSubmit.isCooking ? Colors.pink : Colors.white,
                     border: Border.all(
                       width: 2,
                       color: Colors.black,
@@ -217,7 +217,8 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                   width: 80,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: OnSubmit.isSwimming ? Colors.blue : Colors.white,
+                    color:
+                        OnSubmit.isSwimming ? Colors.cyanAccent : Colors.white,
                     border: Border.all(
                       width: 2,
                       color: Colors.black,
@@ -245,7 +246,7 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                   width: 80,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: OnSubmit.isDance ? Colors.blue : Colors.white,
+                    color: OnSubmit.isDance ? Colors.brown : Colors.white,
                     border: Border.all(
                       width: 2,
                       color: Colors.black,
