@@ -420,3 +420,242 @@ class OnSubmit {
     }
   }
 }
+
+class RatioQuestion {
+  static List answerList = ['c', 'b', 'c', 'c', 'c', 'a', 'c', 'c', 'b', 'b'];
+  static List ans = [
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+  ];
+
+  static int points = 0;
+  static bool isSubmited = false;
+  static bool isSelected = false;
+  static bool isVisible = false;
+  static List<Map<String, dynamic>> rtoQuestionData = [
+    {
+      'Que':
+          '1. When near a pedestrian crossing, as the pedestrians are waiting to cross the road, what should you do?',
+      'a': 'Sound horn and proceed',
+      'b': 'Slow down, sound horn and pass',
+      'c':
+          'Stop the vehicle and wait till the pedestrians cross the road and then proceed',
+      'Answer': 'c',
+      'isSelected': false,
+    },
+    {
+      'Que':
+          '2. A person driving a vehicle in a public place without a licence, is liable for:',
+      'a': 'Penalty only',
+      'b': 'Penalty for the driver and the owner and/ or seizure of vehicle',
+      'c': 'A warning',
+      'Answer': 'b',
+      'isSelected': false,
+    },
+    {
+      'Que':
+          '3. While parking your vehicle on a downward gradient, in addition to the application of hand brake, the gear engaged should be: ',
+      'a': 'In neutral',
+      'b': 'In first',
+      'c': 'In reverse',
+      'Answer': 'c',
+      'isSelected': false,
+    },
+    {
+      'Que':
+          '4. When a vehicle is involved in an accident causing injury to any person, what should you do?',
+      'a':
+          'Take the vehicle to the nearest police station and report the accident',
+      'b': 'Stop the vehicle and report to the police station',
+      'c':
+          'Take all reasonable steps to secure medical attention to the injured and report to the nearest police station within 24 hours',
+      'Answer': 'c',
+      'isSelected': false,
+    },
+    {
+      'Que':
+          '5. On a road designated as one way, which of the following holds true? ',
+      'a': 'Parking is prohibited',
+      'b': 'Overtaking is prohibited',
+      'c': 'Should not drive in reverse gear',
+      'Answer': 'c',
+      'isSelected': false,
+    },
+    {
+      'Que':
+          '6. When a blind person is crossing the road holding a white cane, the driver should:',
+      'a': 'Consider the white cane as a traffic sign to stop the vehicle',
+      'b': 'Blow the horn and proceed',
+      'c': 'Slow down and proceed with caution',
+      'Answer': 'a',
+      'isSelected': false,
+    },
+    {
+      'Que':
+          '7. What happens if you are carrying overload in goods carriages? ',
+      'a': 'It is not a punishable offence',
+      'b': 'Only attracts a fine',
+      'c': 'Driving licence can be suspended or cancelled',
+      'Answer': 'c',
+      'isSelected': false,
+    },
+    {
+      'Que':
+          '8. When you reach an intersection where there is no signal light or a traffic police man, you should:',
+      'a': 'Give way to traffic approaching the intersection from other roads',
+      'b': 'Give proper signal, sound the horn and then proceed',
+      'c':
+          'Give way to the traffic approaching the intersection on your right side and proceed after giving necessary signals',
+      'Answer': 'c',
+      'isSelected': false,
+    },
+    {
+      'Que':
+          '9. When the road is marked with a broken center line in the colour white',
+      'a':
+          'When the road is marked with a broken center line in the colour white',
+      'b': 'When the vehicle is being driven on a steep hill',
+      'c':
+          'When the road is marked with a continuous center line in the colour yellow',
+      'Answer': 'b',
+      'isSelected': false,
+    },
+    {
+      'Que': '10. If the road is marked with broken white lines, you:',
+      'a': 'shall not change track',
+      'b': 'can change track, if required',
+      'c': 'shall stop the vehicle',
+      'Answer': 'b',
+      'isSelected': false,
+    },
+  ];
+  static void isVisibleMethod() {
+    for (var index in rtoQuestionData) {
+      if (index['a'] == true || index['b'] == true || index['c'] == true) {
+        isVisible = true;
+      }
+    }
+  }
+
+  static ansMethod() {
+    if (rtoQuestionData[0]['Answer'] == answerList[0]) {
+      points += 5;
+    }
+    if (rtoQuestionData[1]['Answer'] == answerList[1]) {
+      points += 5;
+    }
+    if (rtoQuestionData[2]['Answer'] == answerList[2]) {
+      points += 5;
+    }
+    if (rtoQuestionData[3]['Answer'] == answerList[3]) {
+      points += 5;
+    }
+    if (rtoQuestionData[4]['Answer'] == answerList[4]) {
+      points += 5;
+    }
+    if (rtoQuestionData[5]['Answer'] == answerList[5]) {
+      points += 5;
+    }
+    if (rtoQuestionData[6]['Answer'] == answerList[6]) {
+      points += 5;
+    }
+    if (rtoQuestionData[7]['Answer'] == answerList[7]) {
+      points += 5;
+    }
+    if (rtoQuestionData[8]['Answer'] == answerList[8]) {
+      points += 5;
+    }
+    if (rtoQuestionData[9]['Answer'] == answerList[9]) {
+      points += 5;
+    } else {
+      points -= 2;
+    }
+  }
+
+  static void submitTapped(int index, context) {
+    if (isSubmited) {
+      points++;
+    } else if (!isSubmited) {
+      points++;
+    }
+
+    isSubmited = !isSubmited;
+    ansMethod();
+  }
+
+  static void clearMethod() {
+    if (isSubmited == false) {
+      points = 0;
+    }
+  }
+}
+///////////////////////////////////////////////////
+
+class HobbyCheckBox {
+  static bool isSelected = false;
+  static List selectHobbiesList = [];
+  static bool isSubmitted = false;
+  static List<Map<String, dynamic>> hobbyData = [
+    {
+      'hobbyName': 'cricket',
+      'isSelected': false,
+    },
+    {
+      'hobbyName': 'football',
+      'isSelected': false,
+    },
+    {
+      'hobbyName': 'chess',
+      'isSelected': false,
+    },
+    {
+      'hobbyName': 'dance',
+      'isSelected': false,
+    },
+    {
+      'hobbyName': 'singing',
+      'isSelected': false,
+    },
+    {
+      'hobbyName': 'music',
+      'isSelected': false,
+    },
+    {
+      'hobbyName': 'Shopping',
+      'isSelected': false,
+    },
+    {
+      'hobbyName': 'Blogging',
+      'isSelected': false,
+    },
+    {
+      'hobbyName': 'Readingbooks',
+      'isSelected': false,
+    },
+    {
+      'hobbyName': 'cooking',
+      'isSelected': false,
+    },
+  ];
+  static void hobbyMehod() {
+    for (var index in hobbyData) {
+      if (index['isSelected'] == true) {
+        selectHobbiesList.add(index['hobbyName']);
+      }
+    }
+  }
+
+  static void clearMethod() {
+    if (!isSubmitted == false) {
+      selectHobbiesList.clear();
+    }
+  }
+}

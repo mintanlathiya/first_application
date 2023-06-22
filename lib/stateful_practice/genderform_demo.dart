@@ -12,7 +12,8 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 199, 207, 121),
+      backgroundColor:
+          OnSubmit.isSubmitted == true ? Colors.lime : Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(

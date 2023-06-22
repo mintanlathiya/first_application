@@ -595,4 +595,29 @@ final List<Map> gridData = [
   },
 ];
 
-
+List<Map<String, dynamic>> pageViewReelList = [
+  {
+    'url': 'assets/images/21.jpeg',
+  },
+  {
+    'url': 'assets/images/22.jpeg',
+  },
+  {
+    'url': 'assets/images/23.jpeg',
+  },
+  {
+    'url': 'assets/images/24.jpeg',
+  },
+  {
+    'url': 'assets/images/25.jpeg',
+  },
+  {
+    'url': 'assets/images/26.jpeg',
+  },
+  {
+    'url': 'assets/images/27.jpeg',
+  },
+  {
+    'url': 'assets/images/28.jpeg',
+  },
+];
