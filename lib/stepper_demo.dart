@@ -37,6 +37,10 @@ class _StepperDemoState extends State<StepperDemo> {
               label: Icon(Icons.person),
               subtitle: Text('subTile'))
         ],
+        //elevation: 20,
+        //margin: const EdgeInsets.all(20),
+        //physics: const BouncingScrollPhysics(),
+        //onStepTapped: (value) {},
       ),
     );
   }

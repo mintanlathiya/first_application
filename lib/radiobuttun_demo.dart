@@ -23,6 +23,15 @@ class _RadioButtunDemoState extends State<RadioButtunDemo> {
               gender = value!;
               setState(() {});
             },
+            //autofocus: true,
+            //focusColor: Colors.red,
+            //hoverColor: Colors.green,
+            // fillColor: const MaterialStatePropertyAll(Colors.amberAccent),
+            //mouseCursor: MouseCursor.uncontrolled,
+            //focusNode: FocusNode(),
+            //overlayColor: const MaterialStatePropertyAll(Colors.brown),
+            splashRadius: 20,
+            //materialTapTargetSize: Materi,
           ),
           const Text('Male'),
           Radio(
