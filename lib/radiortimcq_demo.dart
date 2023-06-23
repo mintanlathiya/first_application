@@ -94,7 +94,7 @@ class _RadioRtoMcqDemoState extends State<RadioRtoMcqDemo> {
                 ),
               ),
             ),
-            // (RatioQuestion.rtoQuestionData[index]['isSelected'])
+      
             MaterialButton(
               height: 80,
               minWidth: 150,
@@ -105,7 +105,7 @@ class _RadioRtoMcqDemoState extends State<RadioRtoMcqDemo> {
               onPressed: () {
                 RatioQuestion.isSubmited;
                 RatioQuestion.isSubmited = !RatioQuestion.isSubmited;
-                //RatioQuestion.isVisibleMethod();
+            
                 RatioQuestion.clearMethod();
                 RatioQuestion.ansMethod();
 
@@ -116,7 +116,7 @@ class _RadioRtoMcqDemoState extends State<RadioRtoMcqDemo> {
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
             ),
-            // : const SizedBox(),
+
             RatioQuestion.isSubmited
                 ? Text(
                     'score out of 50 is ${RatioQuestion.points.toString()}',

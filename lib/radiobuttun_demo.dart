@@ -30,8 +30,9 @@ class _RadioButtunDemoState extends State<RadioButtunDemo> {
             //mouseCursor: MouseCursor.uncontrolled,
             //focusNode: FocusNode(),
             //overlayColor: const MaterialStatePropertyAll(Colors.brown),
-            splashRadius: 20,
-            //materialTapTargetSize: Materi,
+            //splashRadius: 20,
+            //materialTapTargetSize: MaterialTapTargetSize.padded,
+            //),
           ),
           const Text('Male'),
           Radio(
