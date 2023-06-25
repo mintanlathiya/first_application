@@ -8,9 +8,12 @@ class TabBarInstaDemo extends StatefulWidget {
   State<TabBarInstaDemo> createState() => _TabBarInstaDemoState();
 }
 
-class _TabBarInstaDemoState extends State<TabBarInstaDemo> {
+class _TabBarInstaDemoState extends State<TabBarInstaDemo>
+//with TickerProviderStateMixin
+{
   @override
   Widget build(BuildContext context) {
+    //TabController tabController = TabController(length: 2, vsync: this);
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -20,7 +23,10 @@ class _TabBarInstaDemoState extends State<TabBarInstaDemo> {
             children: [
               const Row(
                 children: [
-                  Icon(Icons.lock_outline),
+                  Icon(
+                    Icons.lock_outline,
+                    size: 30,
+                  ),
                   Text(
                     'mintan_lathiya',
                     style: TextStyle(
@@ -28,9 +34,19 @@ class _TabBarInstaDemoState extends State<TabBarInstaDemo> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Icon(Icons.arrow_drop_down),
-                  Icon(Icons.add_box_outlined),
-                  Icon(Icons.menu_outlined)
+                  Icon(
+                    Icons.arrow_drop_down,
+                    size: 30,
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.add_box_outlined,
+                    size: 30,
+                  ),
+                  Icon(
+                    Icons.menu_outlined,
+                    size: 30,
+                  )
                 ],
               ),
               const Padding(
@@ -42,7 +58,7 @@ class _TabBarInstaDemoState extends State<TabBarInstaDemo> {
                       children: [
                         CircleAvatar(
                           backgroundImage: AssetImage(
-                            'assets/images/21.jpeg',
+                            'assets/images/35.jpeg',
                           ),
                           radius: 45,
                         ),
@@ -161,25 +177,32 @@ class _TabBarInstaDemoState extends State<TabBarInstaDemo> {
               ),
               const TabBar(
                 indicatorColor: Colors.black,
+                // controller: tabController,
                 tabs: [
                   Icon(
                     Icons.grid_on_outlined,
                     size: 40,
                     color: Colors.black,
                   ),
-                  Icon(
-                    Icons.person_pin_outlined,
-                    color: Colors.black,
-                    size: 40,
+                  RotatedBox(
+                    quarterTurns: 2,
+                    child: Icon(
+                      Icons.person_pin_outlined,
+                      color: Colors.black,
+                      size: 40,
+                    ),
                   )
                 ],
               ),
-              // const TabBarView(
-              //   children: [
-              //     GridUrl(),
-              //     PersonPinimages(),
-              //   ],
-              // ),
+              const Expanded(
+                child: TabBarView(
+                  //controller: tabController,
+                  children: [
+                    GridUrl(),
+                    PersonPinimages(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -205,14 +228,16 @@ class _GridUrlState extends State<GridUrl> {
             itemCount: instagramProfilePageImageList.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              mainAxisSpacing: 3,
-              crossAxisSpacing: 3,
+              mainAxisSpacing: 4,
+              crossAxisSpacing: 4,
             ),
             itemBuilder: (context, index) => Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image:
-                      AssetImage(instagramProfilePageImageList[index]['url']),
+                  image: AssetImage(
+                    instagramProfilePageImageList[index]['url'],
+                  ),
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -240,14 +265,15 @@ class _PersonPinimagesState extends State<PersonPinimages> {
             itemCount: instagramProfilePageImageList.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              mainAxisSpacing: 3,
-              crossAxisSpacing: 3,
+              mainAxisSpacing: 4,
+              crossAxisSpacing: 4,
             ),
             itemBuilder: (context, index) => Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image:
-                      AssetImage(instagramProfilePageImageList[index]['url1']),
+                      AssetImage(instagramProfilePageImageList1[index]['url']),
+                  fit: BoxFit.fill,
                 ),
               ),
             ),

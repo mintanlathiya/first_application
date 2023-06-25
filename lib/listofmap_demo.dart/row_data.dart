@@ -654,41 +654,63 @@ final List<Map<String, dynamic>> stepperStepList = [
     'icon': Icons.edit_outlined,
   },
 ];
+
 final List<Map<String, dynamic>> instagramProfilePageImageList = [
   {
     'url': 'assets/images/21.jpeg',
-    'url1': 'assets/images/3.jpeg',
   },
   {
-    'url': 'assets/images/29.jpeg',
-    'url1': 'assets/images/3.jpeg',
+    'url': 'assets/images/35.jpeg',
   },
   {
     'url': 'assets/images/28.jpeg',
-    'url1': 'assets/images/3.jpeg',
   },
   {
-    'url': 'assets/images/27.jpeg',
-    'url1': 'assets/images/3.jpeg',
+    'url': 'assets/images/35.jpeg',
   },
   {
     'url': 'assets/images/26.jpeg',
-    'url1': 'assets/images/3.jpeg',
   },
   {
-    'url': 'assets/images/25.jpeg',
-    'url1': 'assets/images/3.jpeg',
+    'url': 'assets/images/35.jpeg',
   },
   {
     'url': 'assets/images/24.jpeg',
-    'url1': 'assets/images/3.jpeg',
   },
   {
-    'url': 'assets/images/23.jpeg',
-    'url1': 'assets/images/3.jpeg',
+    'url': 'assets/images/35.jpeg',
   },
   {
     'url': 'assets/images/22.jpeg',
-    'url1': 'assets/images/3.jpeg',
+  },
+];
+
+final List<Map<String, dynamic>> instagramProfilePageImageList1 = [
+  {
+    'url': 'assets/images/35.jpeg',
+  },
+  {
+    'url': 'assets/images/4.jpeg',
+  },
+  {
+    'url': 'assets/images/35.jpeg',
+  },
+  {
+    'url': 'assets/images/4.jpeg',
+  },
+  {
+    'url': 'assets/images/35.jpeg',
+  },
+  {
+    'url': 'assets/images/4.jpeg',
+  },
+  {
+    'url': 'assets/images/35.jpeg',
+  },
+  {
+    'url': 'assets/images/4.jpeg',
+  },
+  {
+    'url': 'assets/images/35.jpeg',
   },
 ];
