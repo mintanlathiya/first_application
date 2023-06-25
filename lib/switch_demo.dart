@@ -25,6 +25,23 @@ class _SwitchDemoState extends State<SwitchDemo> {
                   isActive = value;
                   setState(() {});
                 },
+
+                //activeThumbImage: const AssetImage('assets/images/3.jpeg'),
+                //inactiveThumbColor: Colors.black12.withOpacity(0.1),
+                //inactiveThumbImage: const AssetImage('assets/images/21.jpeg'),
+                //trackColor:
+                //   MaterialStatePropertyAll(Colors.pink.withOpacity(0.2)),
+                //thumbColor: const MaterialStatePropertyAll(Colors.pink),
+                //inactiveTrackColor: Colors.pinkAccent.withOpacity(0.2),
+
+                //thumbIcon: const MaterialStatePropertyAll(Icon(Icons.add)),
+                //trackOutlineColor: const MaterialStatePropertyAll(Colors.pink),
+                //activeColor: Colors.amber,
+                //autofocus: true,
+                //focusColor: Colors.red,
+                //hoverColor: Colors.green,
+                //overlayColor: const MaterialStatePropertyAll(Colors.brown),
+                //mouseCursor: MouseCursor.defer,
               )
             ],
           ),
