@@ -175,9 +175,43 @@ class _TabBarInstaDemoState extends State<TabBarInstaDemo>
                   ],
                 ),
               ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(50))),
+                          child: const Icon(
+                            Icons.add,
+                            size: 40,
+                          ),
+                        ),
+                        const Text('New'),
+                      ],
+                    ),
+                    ...List.generate(
+                        10,
+                        (index) => const Padding(
+                              padding: EdgeInsets.all(10),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black12,
+                                radius: 40,
+                              ),
+                            ))
+                  ],
+                ),
+              ),
               const TabBar(
                 indicatorColor: Colors.black,
-                // controller: tabController,
+                //controller: tabController,
                 tabs: [
                   Icon(
                     Icons.grid_on_outlined,
@@ -237,7 +271,7 @@ class _GridUrlState extends State<GridUrl> {
                   image: AssetImage(
                     instagramProfilePageImageList[index]['url'],
                   ),
-                  fit: BoxFit.fill,
+                  //fit: BoxFit.fill,
                 ),
               ),
             ),
