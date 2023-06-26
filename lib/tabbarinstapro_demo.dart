@@ -18,7 +18,7 @@ class _TabBarInstaDemoState extends State<TabBarInstaDemo>
       length: 2,
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
               const Row(
