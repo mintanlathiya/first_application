@@ -8,13 +8,10 @@ class IconDemo extends StatelessWidget {
       body: Center(
         child: Icon(
           Icons.access_alarm,
+          
           color: Colors.blue,
+          
           size: 50,
-          shadows: [
-            Shadow(
-              blurRadius: 15,
-            )
-          ],
         ),
       ),
     );

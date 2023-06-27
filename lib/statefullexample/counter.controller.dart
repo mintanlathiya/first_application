@@ -1,5 +1,4 @@
 import 'package:first_application/listofmap_demo.dart/row_data.dart';
-import 'package:first_application/radiortimcq_demo.dart';
 import 'package:flutter/material.dart';
 
 class Counter {
