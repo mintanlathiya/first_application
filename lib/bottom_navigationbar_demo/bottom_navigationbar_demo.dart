@@ -22,10 +22,10 @@ class _BottomNavigationbarDemoState extends State<BottomNavigationbarDemo> {
       'title': 'shots',
       'icon': Icons.video_call,
     },
-    {
-      'title': '',
-      'icon': Icons.add,
-    },
+    // {
+    //   'title': '',
+    //   'icon': Icons.add,
+    // },
     {
       'title': 'subcriptions',
       'icon': Icons.bookmark,
@@ -46,6 +46,30 @@ class _BottomNavigationbarDemoState extends State<BottomNavigationbarDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+          //backgroundColor: Colors.red,
+          //elevation: 20,
+          //fixedColor: Colors.red,
+          //iconSize: 50,
+          //selectedFontSize: 50,
+          // selectedIconTheme: const IconThemeData(
+          //   color: Colors.amber,
+          //   size: 30,
+          //   fill: 0.5,
+          // ),
+          //selectedItemColor: Colors.pink,
+          // selectedLabelStyle: const TextStyle(
+          //   color: Colors.amber,
+          //   fontWeight: FontWeight.bold,
+          //   fontSize: 30,
+          // ),
+          //showUnselectedLabels: true,
+          //showSelectedLabels: true,
+          //type: BottomNavigationBarType.fixed,
+          //unselectedFontSize: 30,
+          // unselectedItemColor: Colors.green,
+          // unselectedLabelStyle:
+          //     const TextStyle(fontSize: 30, color: Colors.amber),
+          //useLegacyColorScheme: false,
           onTap: (value) {
             (selectedIndex = value);
             setState(() {});
@@ -54,10 +78,13 @@ class _BottomNavigationbarDemoState extends State<BottomNavigationbarDemo> {
           items: List.generate(
               navigationData.length,
               (index) => BottomNavigationBarItem(
+                    //tooltip: 'mini',
+                    // activeIcon: const Icon(Icons.add),
+
                     backgroundColor: Colors.cyan,
                     icon: Icon(
                       navigationData[index]['icon'],
-                      color: Colors.black,
+                      //color: Colors.black,
                     ),
                     label: navigationData[index]['title'],
                   ))),

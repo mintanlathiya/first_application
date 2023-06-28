@@ -1,4 +1,4 @@
-import 'package:first_application/youtube_bottomnavigation_demo.dart/youtubebottomnavigationbase_demo.dart';
+import 'package:first_application/bottom_navigationbar_demo/bottom_navigationbar_demo.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: YoutubeBottomNavigationDemo(),
+      home: BottomNavigationbarDemo(),
     );
   }
 }

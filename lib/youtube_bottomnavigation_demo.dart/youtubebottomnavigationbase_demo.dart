@@ -26,6 +26,7 @@ class _YoutubeBottomNavigationDemoState
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+
         onTap: (value) {
           selectedIndex = value;
           setState(() {});
@@ -34,6 +35,7 @@ class _YoutubeBottomNavigationDemoState
         items: List.generate(
           youtubeNavigationData.length,
           (index) => BottomNavigationBarItem(
+            
             backgroundColor: Colors.cyan,
             icon: Icon(
               youtubeNavigationData[index]['icon'],
