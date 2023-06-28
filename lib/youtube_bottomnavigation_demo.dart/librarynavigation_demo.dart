@@ -191,35 +191,42 @@ class _LibraryNavigationState extends State<LibraryNavigation> {
                         width: 180,
                         margin: const EdgeInsets.only(left: 20, bottom: 5),
                         decoration: const BoxDecoration(
-                          color: Colors.black87,
-                          borderRadius: BorderRadius.all(Radius.circular(15)),
-                        ),
-                        child: const Opacity(
-                          opacity: 0.2,
-                          child: Image(
+                            color: Colors.black87,
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            image: DecorationImage(
                               image: AssetImage('assets/images/23.jpeg'),
-                              fit: BoxFit.fill),
-                        ),
+                            )),
                       ),
-                      const Positioned.fill(
-                        left: 20,
-                        top: 30,
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.thumb_up,
-                              color: Colors.white,
-                            ),
-                            SizedBox(height: 5),
-                            Text(
-                              '13',
-                              style: TextStyle(
+                      Opacity(
+                        opacity: 0.7,
+                        child: Container(
+                          height: 120,
+                          width: 180,
+                          margin: const EdgeInsets.only(left: 20, bottom: 5),
+                          decoration: const BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                          ),
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.thumb_up,
                                 color: Colors.white,
                               ),
-                            )
-                          ],
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                '13',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   const Padding(
