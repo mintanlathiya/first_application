@@ -1,6 +1,18 @@
 import 'package:first_application/youtube_bottomnavigation_demo.dart/youtubeuser_modal_demo.dart';
 import 'package:flutter/material.dart';
 
+final List<String> topicLists = [
+  'All',
+  'News',
+  'Sharks',
+  'Tarak Mehta',
+  'live',
+  'Flutter',
+  'Computer',
+  'Cricket',
+  'Recently uploaded',
+  'New to you',
+];
 final List<Map> youtubeNavigationData = [
   {
     'title': 'home',
@@ -156,3 +168,95 @@ final List<Map<String, dynamic>> youtubeHomePageApi = [
   },
 ];
 List<YoutubeHomePageDetail> youtubeHomePageData = [];
+
+final List<Map<String, dynamic>> shortsReelList = [
+  {
+    'ac profile': 'assets/images/21.jpeg',
+    'url': 'assets/images/21.jpeg',
+    'name': 'hardik patel',
+    'contain':
+        'EIFFEL  TOWER  AT  NIGHT, Paris  France \n Eiffel  Tower  sparkling  &  twinkling  at',
+  },
+  {
+    'ac profile': 'assets/images/22.jpeg',
+    'url': 'assets/images/22.jpeg',
+    'name': 'mintan lathiya',
+    'contain': 'Rome tour \n Italy 2023',
+  },
+  {
+    'ac profile': 'assets/images/23.jpeg',
+    'url': 'assets/images/23.jpeg',
+    'name': 'vishal mavani',
+    'contain': 'Spain Travel \n Best Place',
+  },
+  {
+    'ac profile': 'assets/images/3.jpeg',
+    'url': 'assets/images/24.jpeg',
+    'name': 'viraj',
+    'contain': 'Holiday in Bali \n visit in Bali',
+  },
+  {
+    'ac profile': 'assets/images/4.jpeg',
+    'url': 'assets/images/25.jpeg',
+    'name': 'jemish virani',
+    'contain': '5 place to visit \n in Spain 2021',
+  },
+  {
+    'ac profile': 'assets/images/5.jpeg',
+    'url': 'assets/images/26.jpeg',
+    'name': 'kappu',
+    'contain':
+        'Is  this  most  beautiful  building  in  the \n world? - Stephanie  Honchell  Smith',
+  },
+  {
+    'ac profile': 'assets/images/27.jpeg',
+    'url': 'assets/images/27.jpeg',
+    'name': ' raju patil',
+    'contain': 'best travel',
+  },
+  {
+    'ac profile': 'assets/images/28.jpeg',
+    'url': 'assets/images/28.jpeg',
+    'name': 'jatin kachha',
+    'contain': 'Is  this  most  beautiful  building  in  the \n world',
+  },
+];
+
+List<Shorts> shortData = [];
+
+final List<Map<String, dynamic>> subscribeChannelList = [
+  {
+    'url': 'assets/images/24.jpeg',
+    'channelName': 'Baaba',
+  },
+  {
+    'url': 'assets/images/22.jpeg',
+    'channelName': 'Perfect ...',
+  },
+  {
+    'url': 'assets/images/32.jpeg',
+    'channelName': 'Prakash',
+  },
+  {
+    'url': 'assets/images/27.jpeg',
+    'channelName': 'Vivek Ba...',
+  },
+  {
+    'url': 'assets/images/18.jpeg',
+    'channelName': 'WsCutbe',
+  },
+  {
+    'url': 'assets/images/5.jpeg',
+    'channelName': 'Techie H...',
+  },
+  {
+    'url': 'assets/images/4.jpeg',
+    'channelName': 'Geeky S...',
+  },
+  {
+    'url': 'assets/images/3.jpeg',
+    'channelName': 'Vijay ked...',
+  }
+];
+
+List<SubscribeDetail> subscribeChannelData = [];

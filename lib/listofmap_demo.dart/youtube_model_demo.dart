@@ -221,7 +221,7 @@ class YoutubeModelDemo extends StatelessWidget {
                       decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 219, 212, 212),
                           borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: const Text(' live'),
+                      child: const Text('live'),
                     ),
                     Container(
                       margin: const EdgeInsets.only(right: 15),
@@ -271,7 +271,7 @@ class YoutubeModelDemo extends StatelessWidget {
                       decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 219, 212, 212),
                           borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: const Text(' Recently uploaded'),
+                      child: const Text('Recently uploaded'),
                     ),
                     const Text(
                       'Send feedback',

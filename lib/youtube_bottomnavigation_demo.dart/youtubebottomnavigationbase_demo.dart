@@ -26,21 +26,23 @@ class _YoutubeBottomNavigationDemoState
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-          onTap: (value) {
-            selectedIndex = value;
-            setState(() {});
-          },
-          currentIndex: selectedIndex,
-          items: List.generate(
-              youtubeNavigationData.length,
-              (index) => BottomNavigationBarItem(
-                    backgroundColor: Colors.cyan,
-                    icon: Icon(
-                      youtubeNavigationData[index]['icon'],
-                      color: Colors.black,
-                    ),
-                    label: youtubeNavigationData[index]['title'],
-                  ))),
+        onTap: (value) {
+          selectedIndex = value;
+          setState(() {});
+        },
+        currentIndex: selectedIndex,
+        items: List.generate(
+          youtubeNavigationData.length,
+          (index) => BottomNavigationBarItem(
+            backgroundColor: Colors.cyan,
+            icon: Icon(
+              youtubeNavigationData[index]['icon'],
+              color: Colors.black,
+            ),
+            label: youtubeNavigationData[index]['title'],
+          ),
+        ),
+      ),
       body: youtubescreen.elementAt(selectedIndex),
     );
   }

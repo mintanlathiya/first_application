@@ -128,3 +128,53 @@ class YoutubeHomePageDetail {
     return data;
   }
 }
+
+class Shorts {
+  String? name, contain, acprofile, url;
+
+  Shorts({this.acprofile, this.name, this.contain, this.url});
+  factory Shorts.fromJson(Map<String, dynamic> json) => Shorts(
+        acprofile: json['ac profile'],
+        name: json['name'],
+        contain: json['contain'],
+        url: json['url'],
+      );
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> data = {};
+
+    if (name != null) {
+      data['name'] = name;
+    }
+    if (contain != null) {
+      data['contain'] = contain;
+    }
+    if (acprofile != null) {
+      data['ac profile'] = acprofile;
+    }
+    if (url != null) {
+      data['url'] = url;
+    }
+    return data;
+  }
+}
+
+class SubscribeDetail {
+  String? url, channelName;
+
+  SubscribeDetail({this.channelName, this.url});
+  factory SubscribeDetail.fromJson(Map<String, dynamic> json) =>
+      SubscribeDetail(
+        url: json['url'],
+        channelName: json['channelName'],
+      );
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> data = {};
+    if (url != null) {
+      data['url'] = url;
+    }
+    if (channelName != null) {
+      data['channelName'] = channelName;
+    }
+    return data;
+  }
+}
