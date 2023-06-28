@@ -56,7 +56,7 @@ class _BottomNavigationbarDemoState extends State<BottomNavigationbarDemo> {
           //   size: 30,
           //   fill: 0.5,
           // ),
-          //selectedItemColor: Colors.pink,
+          selectedItemColor: Colors.pink,
           // selectedLabelStyle: const TextStyle(
           //   color: Colors.amber,
           //   fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class _BottomNavigationbarDemoState extends State<BottomNavigationbarDemo> {
                     //tooltip: 'mini',
                     // activeIcon: const Icon(Icons.add),
 
-                    backgroundColor: Colors.cyan,
+                    backgroundColor: const Color.fromARGB(255, 34, 92, 100),
                     icon: Icon(
                       navigationData[index]['icon'],
                       //color: Colors.black,

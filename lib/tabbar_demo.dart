@@ -29,11 +29,13 @@ class _TabBarDemoState extends State<TabBarDemo> {
             preferredSize: Size(double.infinity, 70),
             child: TabBar(
               //dividerColor: Colors.amber,
+
               tabs: [
                 Text('chats', style: TextStyle(fontSize: 30)),
                 Text('Status', style: TextStyle(fontSize: 30)),
                 Text('Calls', style: TextStyle(fontSize: 30)),
               ],
+
               // indicator: BoxDecoration(
               //     color: Colors.orange,
               //     borderRadius: BorderRadius.all(Radius.circular(12))),
