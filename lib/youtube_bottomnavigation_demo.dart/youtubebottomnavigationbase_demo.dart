@@ -26,17 +26,20 @@ class _YoutubeBottomNavigationDemoState
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-
+        fixedColor:selectedIndex==1? Colors.black:Colors.black,
+        //type: BottomNavigationBarType.fixed,
         onTap: (value) {
           selectedIndex = value;
           setState(() {});
+          
         },
         currentIndex: selectedIndex,
         items: List.generate(
           youtubeNavigationData.length,
           (index) => BottomNavigationBarItem(
-            
-            backgroundColor: Colors.cyan,
+            backgroundColor: (youtubeNavigationData[index]['title'] == 'shots')
+                ? Colors.transparent
+                : Colors.white,
             icon: Icon(
               youtubeNavigationData[index]['icon'],
               color: Colors.black,

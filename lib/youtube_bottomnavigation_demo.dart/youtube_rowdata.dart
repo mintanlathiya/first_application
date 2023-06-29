@@ -16,7 +16,7 @@ final List<String> topicLists = [
 final List<Map> youtubeNavigationData = [
   {
     'title': 'home',
-    'icon': Icons.home,
+    'icon': Icons.home_outlined,
   },
   {
     'title': 'shots',
@@ -28,7 +28,7 @@ final List<Map> youtubeNavigationData = [
   // },
   {
     'title': 'subcriptions',
-    'icon': Icons.subscriptions,
+    'icon': Icons.subscriptions_outlined,
   },
   {
     'title': 'Liabary',

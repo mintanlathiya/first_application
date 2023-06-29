@@ -249,6 +249,73 @@ class _LibraryNavigationState extends State<LibraryNavigation> {
                   ),
                 ],
               ),
+              Column(
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        height: 120,
+                        width: 180,
+                        margin: const EdgeInsets.only(left: 20, bottom: 5),
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/images/25.jpeg'),
+                              fit: BoxFit.fill),
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
+                        ),
+                      ),
+                      Opacity(
+                        opacity: 0.7,
+                        child: Container(
+                          height: 120,
+                          width: 180,
+                          margin: const EdgeInsets.only(left: 20, bottom: 5),
+                          decoration: const BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                          ),
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.watch_later_outlined,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                '1',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20),
+                    child: Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Watch later'),
+                            Text('private'),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 80,
+                        ),
+                        Icon(Icons.more_vert),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
               const SizedBox(
                 width: 50,
               ),
