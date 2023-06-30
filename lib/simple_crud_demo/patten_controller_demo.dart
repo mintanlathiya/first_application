@@ -55,16 +55,16 @@ class PatternAllList {
       'function': (int n) => pattern18(n),
     },
     {
-      'function': (int n) => pattern3(n),
+      'function': (int n) => pattern19(n),
     },
     {
-      'function': (int n) => pattern4(n),
+      'function': (int n) => pattern20(n),
     },
     {
-      'function': (int n) => pattern1(n),
+      'function': (int n) => pattern21(n),
     },
     {
-      'function': (int n) => pattern2(n),
+      'function': (int n) => pattern22(n),
     },
     {
       'function': (int n) => pattern3(n),
@@ -160,7 +160,7 @@ class PatternAllList {
 
   static String pattern8(int n) {
     String result = '';
-    for (int i = 45; i <= 49; i++) {
+    for (int i = 45; i <= n; i++) {
       for (int j = 45; j <= i; j++) {
         result += j.toString();
       }
@@ -303,18 +303,98 @@ class PatternAllList {
 
   static String pattern18(int n) {
     String result = '';
-    //String result1 = '';
     for (int i = 1; i <= n; i++) {
       for (int j = 1; j <= i; j++) {
         result += j.toString();
       }
-      result += '\n';
 
-      // for (int j = 1; j <= i; j++) {
-      //   result1 += ' ' * (n - i);
-      //   result1 += j.toString();
-      // }
-      // result1 += '\n';
+      result += '    ' * (n - i);
+
+      for (int j = i; j >= 1; j--) {
+        result += j.toString();
+      }
+      result += '\n';
+    }
+    print(result);
+
+    return result;
+  }
+
+  static String pattern19(int n) {
+    String result = '';
+    for (int i = n; i >= 1; i--) {
+      for (int j = 1; j <= i; j++) {
+        result += j.toString();
+      }
+
+      result += '    ' * (n - i);
+
+      for (int j = i; j >= 1; j--) {
+        result += j.toString();
+      }
+      result += '\n';
+    }
+
+    for (int i = 2; i <= n; i++) {
+      for (int j = 1; j <= i; j++) {
+        result += j.toString();
+      }
+
+      result += '    ' * (n - i);
+
+      for (int j = i; j >= 1; j--) {
+        result += j.toString();
+      }
+      result += '\n';
+    }
+    print(result);
+
+    return result;
+  }
+
+  static String pattern20(int n) {
+    String result = '';
+    for (int i = n; i >= 1; i--) {
+      result += '  ' * (i);
+      for (int j = n; j >= i; j--) {
+        if (j == 5) {
+          result += '*';
+        }
+      }
+
+      result += '    ' * (n - i);
+
+      for (int j = i + 1; j <= n; j++) {
+        if (j == 5) {
+          result += '*';
+        }
+      }
+      result += '\n';
+    }
+    return result;
+  }
+
+  static String pattern21(int n) {
+    int b = 1;
+    String result = '';
+    for (int i = 1; i <= n; i++) {
+      for (int j = 1; j <= i; j++) {
+        result += b.toString();
+        b++;
+      }
+      result += '\n';
+    }
+    print(result);
+    return result;
+  }
+
+  static String pattern22(int n) {
+    String result = '';
+    for (int i = 65; i <= n; i++) {
+      for (int j = 65; j <= i; j++) {
+        result += String.fromCharCode(i);
+      }
+      result += '\n';
     }
     print(result);
     return result;
