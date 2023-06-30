@@ -67,10 +67,10 @@ class PatternAllList {
       'function': (int n) => pattern22(n),
     },
     {
-      'function': (int n) => pattern3(n),
+      'function': (int n) => pattern23(n),
     },
     {
-      'function': (int n) => pattern4(n),
+      'function': (int n) => pattern24(n),
     }
   ];
 
@@ -393,6 +393,35 @@ class PatternAllList {
     for (int i = 65; i <= n; i++) {
       for (int j = 65; j <= i; j++) {
         result += String.fromCharCode(i);
+      }
+      result += '\n';
+    }
+    print(result);
+    return result;
+  }
+
+  static String pattern23(int n) {
+    String result = '';
+    for (int i = 1; i <= n; i++) {
+      for (int j = 1; j <= i; j++) {
+        result += (j % 2).toString();
+      }
+      result += '\n';
+    }
+    print(result);
+    return result;
+  }
+
+  static String pattern24(int n) {
+    String result = '';
+    for (int i = n; i >= 1; i--) {
+      result += '  ' * (i - 1);
+      for (int j = 5; j >= i; j--) {
+        result += j.toString();
+      }
+
+      for (int j = i + 1; j <= n; j++) {
+        result += j.toString();
       }
       result += '\n';
     }
