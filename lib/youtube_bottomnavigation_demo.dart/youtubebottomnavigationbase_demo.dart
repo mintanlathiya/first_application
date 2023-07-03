@@ -18,6 +18,7 @@ class _YoutubeBottomNavigationDemoState
   List<Widget> youtubescreen = [
     const HomeNavigation(),
     const ShortsNavigation(),
+    Container(),
     const SubscriptionsNavigation(),
     const LibraryNavigation(),
   ];
@@ -26,12 +27,61 @@ class _YoutubeBottomNavigationDemoState
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        fixedColor:selectedIndex==1? Colors.black:Colors.black,
-        //type: BottomNavigationBarType.fixed,
+        fixedColor: selectedIndex == 1 ? Colors.black : Colors.black,
         onTap: (value) {
-          selectedIndex = value;
+          if (value != 2) {
+            selectedIndex = value;
+          } else {
+            showModalBottomSheet(
+              context: context,
+              backgroundColor: Colors.transparent,
+              builder: (context) => Container(
+                padding: const EdgeInsets.all(20),
+                height: 400,
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(30))),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        children: [
+                          const Text(
+                            'Create',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Spacer(),
+                          IconButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                                setState(() {});
+                              },
+                              icon: const Icon(
+                                Icons.cancel_outlined,
+                              ))
+                        ],
+                      ),
+                      ...List.generate(
+                        youtubeBottomSheetDetails.length,
+                        (index) => ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: Colors.red,
+                              radius: 30,
+                              child: Icon(
+                                  youtubeBottomSheetDetails[index]['icon']),
+                            ),
+                            title: Text(
+                                youtubeBottomSheetDetails[index]['iconName'])),
+                      ),
+                    ]),
+              ),
+            );
+          }
           setState(() {});
-          
         },
         currentIndex: selectedIndex,
         items: List.generate(

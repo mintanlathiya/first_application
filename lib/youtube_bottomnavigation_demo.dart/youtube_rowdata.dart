@@ -22,10 +22,10 @@ final List<Map> youtubeNavigationData = [
     'title': 'shots',
     'icon': Icons.shop_rounded,
   },
-  // {
-  //   'title': '',
-  //   'icon': Icons.add,
-  // },
+  {
+    'title': '',
+    'icon': Icons.add,
+  },
   {
     'title': 'subcriptions',
     'icon': Icons.subscriptions_outlined,
@@ -260,3 +260,4 @@ final List<Map<String, dynamic>> subscribeChannelList = [
 ];
 
 List<SubscribeDetail> subscribeChannelData = [];
+

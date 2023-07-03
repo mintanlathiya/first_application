@@ -9,30 +9,33 @@ class PalindromeNumber extends StatefulWidget {
 }
 
 class _PalindromeNumberState extends State<PalindromeNumber> {
-  final TextEditingController _textPalindromeEditingController =
-      TextEditingController();
   @override
   void dispose() {
-    _textPalindromeEditingController.dispose();
+    Palindrome.textPalindromeEditingController.dispose();
     super.dispose();
   }
 
-  int? enterNumber;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          TextField(controller: _textPalindromeEditingController),
+          TextField(controller: Palindrome.textPalindromeEditingController),
           MaterialButton(
             onPressed: () {
-              enterNumber = int.parse(_textPalindromeEditingController.text);
-              palindromeNum(enterNumber!);
+              try {
+                Palindrome.palindromeNum =
+                    int.parse(Palindrome.textPalindromeEditingController.text);
+              } catch (e) {
+                Palindrome.palindromeString =
+                    Palindrome.textPalindromeEditingController.text;
+              }
               setState(() {});
             },
             child: const Text('submit'),
           ),
-          if (enterNumber != null) Text(palindromeNum(enterNumber!))
+          if (Palindrome.msg != null) Text(Palindrome.msg!)
         ],
       ),
     );
