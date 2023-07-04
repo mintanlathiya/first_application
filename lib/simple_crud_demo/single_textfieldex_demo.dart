@@ -26,7 +26,8 @@ class _SingleTextFieldExDemoState extends State<SingleTextFieldExDemo> {
   List<Map<String, dynamic>> userData = [];
   bool isUpdate = false;
   int selectedIndex = 0;
-
+  String selectedGender = '';
+  String gender = 'Gender', male = 'Male', female = 'FeMale';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,30 +80,56 @@ class _SingleTextFieldExDemoState extends State<SingleTextFieldExDemo> {
                 label: Text('Age'),
               ),
             ),
+            Row(
+              children: [
+                const Text('Gender :'),
+                const Text('Male'),
+                Radio(
+                  value: male,
+                  groupValue: selectedGender,
+                  onChanged: (value) {
+                    selectedGender = value!;
+                    setState(() {});
+                  },
+                ),
+                const Text('FeMale'),
+                Radio(
+                  value: female,
+                  groupValue: selectedGender,
+                  onChanged: (value) {
+                    selectedGender = value!;
+                    setState(() {});
+                  },
+                ),
+              ],
+            ),
             MaterialButton(
               onPressed: isUpdate
                   ? () {
                       userData[selectedIndex] = {
                         'name': _txtNameEditingController.text,
                         'surName': _txtSurNameEditingController.text,
-                        'age': _txtAgeEditingController.text
+                        'age': _txtAgeEditingController.text,
+                        'Gender': selectedGender,
                       };
                       isUpdate = false;
                       _txtNameEditingController.clear();
                       _txtSurNameEditingController.clear();
                       _txtAgeEditingController.clear();
+                      selectedGender = '';
                       setState(() {});
                     }
                   : () {
                       userData.add({
                         'name': _txtNameEditingController.text,
                         'surName': _txtSurNameEditingController.text,
-                        'age': _txtAgeEditingController.text
+                        'age': _txtAgeEditingController.text,
+                        'Gender': selectedGender,
                       });
                       _txtNameEditingController.clear();
                       _txtSurNameEditingController.clear();
                       _txtAgeEditingController.clear();
-
+                      selectedGender = '';
                       setState(() {});
                     },
               child: Text(isUpdate ? 'update' : 'submit'),
@@ -127,6 +154,7 @@ class _SingleTextFieldExDemoState extends State<SingleTextFieldExDemo> {
                           ),
                           title: Text(userData[index]['name']),
                           subtitle: Text(userData[index]['surName']),
+                          trailing: Text(userData[index]['Gender']),
                           onTap: () {
                             isUpdate = true;
                             selectedIndex = index;
