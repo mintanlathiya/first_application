@@ -22,7 +22,7 @@ class _LoginPageDemoState extends State<LoginPageDemo> {
   }
 
   final _formKey = GlobalKey<FormState>();
-  String? _passwordError;
+  String? passwordError;
   bool _secureText = true;
   bool isselected = false;
   @override
@@ -183,10 +183,11 @@ class _LoginPageDemoState extends State<LoginPageDemo> {
                   password = _txtPasswordEditingController.text;
                   _formKey.currentState!.validate();
                   if (_txtPasswordEditingController.text.length < 6) {
-                    _passwordError = 'Enter at least 6 char';
+                    passwordError = 'Enter at least 6 char';
                   } else {
-                    _passwordError = null;
+                    passwordError = null;
                   }
+
                   setState(() {});
                 },
                 child: const Text(
