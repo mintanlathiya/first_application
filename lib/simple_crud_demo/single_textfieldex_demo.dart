@@ -34,7 +34,7 @@ class _SingleTextFieldExDemoState extends State<SingleTextFieldExDemo> {
 
   bool isCricket = false, isFootball = false, isSinging = false;
   String gender = 'gender', male = 'Male', female = 'FeMale';
-  double selectSalary = 2000;
+  double selectSalary = 20000;
   List stream = ['science', 'commerce', 'arts'];
   String? selectedStream = 'science';
 
@@ -137,8 +137,10 @@ class _SingleTextFieldExDemoState extends State<SingleTextFieldExDemo> {
                 selectSalary = value;
                 setState(() {});
               },
-              min: 2000,
-              max: 5000,
+              divisions: 10,
+              label: selectSalary.toString(),
+              min: 20000,
+              max: 50000,
             ),
             const SizedBox(
               height: 20,
@@ -273,7 +275,7 @@ class _SingleTextFieldExDemoState extends State<SingleTextFieldExDemo> {
                       _txtAgeEditingController.clear();
                       _txtUrlEditingController.clear();
                       selectHobbiesList.clear();
-                      selectSalary = 2000;
+                      selectSalary = 20000;
                       selectedStream = null;
                       gender = 'gender';
                       isCricket = false;
@@ -310,7 +312,7 @@ class _SingleTextFieldExDemoState extends State<SingleTextFieldExDemo> {
                       _txtUrlEditingController.clear();
                       gender = 'gender';
                       selectHobbiesList.clear();
-                      selectSalary = 2000;
+                      selectSalary = 20000;
                       selectedStream = null;
                       isCricket = false;
                       isFootball = false;

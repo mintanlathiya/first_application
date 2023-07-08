@@ -1,4 +1,4 @@
-import 'package:first_application/simple_crud_demo/single_textfieldex_demo.dart';
+import 'package:first_application/mediaqueryex_demo.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SingleTextFieldExDemo(),
+      home: MediaQueryExDemo(),
     );
   }
 }
