@@ -9,13 +9,21 @@ class GenderFormUiDemo extends StatefulWidget {
 }
 
 class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
+  CrossFadeState maleCrossFadeState = CrossFadeState.showFirst,
+      femaleCrossFadeState = CrossFadeState.showFirst,
+      cricketCrossFadeState = CrossFadeState.showFirst,
+      footballCrossFadeState = CrossFadeState.showFirst,
+      cookingCrossFadeState = CrossFadeState.showFirst,
+      swimmingCrossFadeState = CrossFadeState.showFirst,
+      danceCrossFadeState = CrossFadeState.showFirst;
+  double opacityLevel = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:
           OnSubmit.isSubmitted == true ? Colors.lime : Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -31,29 +39,26 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  InkWell(
+                  GestureDetector(
                     onTap: () {
                       OnSubmit.selectedGender = OnSubmit.male;
-                      OnSubmit.isSubmitted = false;
+
                       OnSubmit.clearMethod();
+                      maleCrossFadeState = OnSubmit.selectedGender == 'male'
+                          ? CrossFadeState.showSecond
+                          : CrossFadeState.showFirst;
+                      femaleCrossFadeState = CrossFadeState.showFirst;
+
                       setState(() {});
                     },
-                    child: Card(
-                      color: OnSubmit.selectedGender == 'male'
-                          ? Colors.blue
-                          : Colors.white,
-                      elevation: (OnSubmit.selectedGender == 'male') ? 30 : 0,
-                      child: Container(
+                    child: AnimatedCrossFade(
+                      firstChild: Container(
                         height: 80,
                         width: 150,
                         alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                          width: 3,
-                          color: OnSubmit.selectedGender == 'male'
-                              ? Colors.brown
-                              : Colors.black,
-                        )),
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                        ),
                         child: const Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -68,31 +73,53 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                           ],
                         ),
                       ),
+                      secondChild: Container(
+                        height: 80,
+                        width: 150,
+                        alignment: Alignment.center,
+                        decoration: const BoxDecoration(
+                          color: Colors.green,
+                        ),
+                        child: const Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(Icons.male),
+                            Text(
+                              'male',
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      crossFadeState: maleCrossFadeState,
+                      firstCurve: Curves.bounceOut,
+                      secondCurve: Curves.easeIn,
+                      duration: const Duration(seconds: 1),
                     ),
                   ),
-                  InkWell(
+                  GestureDetector(
                     onTap: () {
                       OnSubmit.selectedGender = OnSubmit.female;
-                      OnSubmit.isSubmitted = false;
+
                       OnSubmit.clearMethod();
+                      femaleCrossFadeState = OnSubmit.selectedGender == 'female'
+                          ? CrossFadeState.showSecond
+                          : CrossFadeState.showFirst;
+
+                      maleCrossFadeState = CrossFadeState.showFirst;
                       setState(() {});
                     },
-                    child: Card(
-                      elevation: (OnSubmit.selectedGender == 'female') ? 30 : 0,
-                      color: (OnSubmit.selectedGender == 'female')
-                          ? Colors.pink
-                          : Colors.white,
-                      child: Container(
+                    child: AnimatedCrossFade(
+                      firstChild: Container(
                         height: 80,
-                        width: 160,
+                        width: 150,
                         alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                          width: 3,
-                          color: OnSubmit.selectedGender == 'female'
-                              ? Colors.brown
-                              : Colors.black,
-                        )),
+                        decoration: const BoxDecoration(
+                          color: Colors.white10,
+                        ),
                         child: const Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -107,6 +134,31 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                           ],
                         ),
                       ),
+                      secondChild: Container(
+                        height: 80,
+                        width: 150,
+                        alignment: Alignment.center,
+                        decoration: const BoxDecoration(
+                          color: Colors.green,
+                        ),
+                        child: const Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(Icons.female),
+                            Text(
+                              'female',
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      crossFadeState: femaleCrossFadeState,
+                      firstCurve: Curves.bounceOut,
+                      secondCurve: Curves.easeIn,
+                      duration: const Duration(seconds: 1),
                     ),
                   )
                 ],
@@ -119,157 +171,316 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Row(children: [
-              InkWell(
-                onTap: () {
-                  OnSubmit.isCricket = !OnSubmit.isCricket;
-                  setState(() {});
-                },
-                child: Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 10,
-                  ),
-                  height: 50,
-                  width: 80,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: OnSubmit.isCricket ? Colors.orange : Colors.white,
-                    border: Border.all(
-                      width: 2,
-                      color: Colors.black,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(children: [
+                GestureDetector(
+                  onTap: () {
+                    OnSubmit.isCricket = !OnSubmit.isCricket;
+                    cricketCrossFadeState = OnSubmit.isCricket
+                        ? CrossFadeState.showSecond
+                        : CrossFadeState.showFirst;
+                    setState(() {});
+                  },
+                  child: AnimatedCrossFade(
+                    firstChild: Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      height: 50,
+                      width: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: const Text(
+                        'cricket',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                  child: const Text(
-                    'cricket',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    secondChild: Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      height: 50,
+                      width: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: const Text(
+                        'cricket',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
+                    crossFadeState: cricketCrossFadeState,
+                    firstCurve: Curves.bounceOut,
+                    secondCurve: Curves.easeIn,
+                    duration: const Duration(seconds: 1),
                   ),
                 ),
-              ),
-              InkWell(
-                onTap: () {
-                  OnSubmit.isFootball = !OnSubmit.isFootball;
-                  setState(() {});
-                },
-                child: Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 10,
-                  ),
-                  height: 50,
-                  width: 80,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: OnSubmit.isFootball ? Colors.purple : Colors.white,
-                    border: Border.all(
-                      width: 2,
-                      color: Colors.black,
+                GestureDetector(
+                  onTap: () {
+                    OnSubmit.isFootball = !OnSubmit.isFootball;
+                    footballCrossFadeState = OnSubmit.isFootball
+                        ? CrossFadeState.showSecond
+                        : CrossFadeState.showFirst;
+                    setState(() {});
+                  },
+                  child: AnimatedCrossFade(
+                    firstChild: Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      height: 50,
+                      width: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: const Text(
+                        'football',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                  child: const Text(
-                    'football',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    secondChild: Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      height: 50,
+                      width: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: const Text(
+                        'football',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
+                    crossFadeState: footballCrossFadeState,
+                    firstCurve: Curves.bounceOut,
+                    secondCurve: Curves.easeIn,
+                    duration: const Duration(seconds: 1),
                   ),
                 ),
-              ),
-              InkWell(
-                onTap: () {
-                  OnSubmit.isCooking = !OnSubmit.isCooking;
-                  setState(() {});
-                },
-                child: Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 10,
-                  ),
-                  height: 50,
-                  width: 80,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: OnSubmit.isCooking ? Colors.pink : Colors.white,
-                    border: Border.all(
-                      width: 2,
-                      color: Colors.black,
+                GestureDetector(
+                  onTap: () {
+                    OnSubmit.isCooking = !OnSubmit.isCooking;
+                    cookingCrossFadeState = OnSubmit.isCooking
+                        ? CrossFadeState.showSecond
+                        : CrossFadeState.showFirst;
+                    setState(() {});
+                  },
+                  child: AnimatedCrossFade(
+                    firstChild: Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      height: 50,
+                      width: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: const Text(
+                        'cooking',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                  child: const Text(
-                    'cooking',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    secondChild: Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      height: 50,
+                      width: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: const Text(
+                        'cooking',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
+                    crossFadeState: cookingCrossFadeState,
+                    firstCurve: Curves.bounceOut,
+                    secondCurve: Curves.easeIn,
+                    duration: const Duration(seconds: 1),
                   ),
                 ),
-              ),
-              InkWell(
-                onTap: () {
-                  OnSubmit.isSwimming = !OnSubmit.isSwimming;
-                  setState(() {});
-                },
-                child: Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 10,
-                  ),
-                  height: 50,
-                  width: 80,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color:
-                        OnSubmit.isSwimming ? Colors.cyanAccent : Colors.white,
-                    border: Border.all(
-                      width: 2,
-                      color: Colors.black,
+                GestureDetector(
+                  onTap: () {
+                    OnSubmit.isSwimming = !OnSubmit.isSwimming;
+                    swimmingCrossFadeState = OnSubmit.isSwimming
+                        ? CrossFadeState.showSecond
+                        : CrossFadeState.showFirst;
+                    setState(() {});
+                  },
+                  child: AnimatedCrossFade(
+                    firstChild: Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      height: 50,
+                      width: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: const Text(
+                        'Swimming',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                  child: const Text(
-                    'Swimming',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    secondChild: Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      height: 50,
+                      width: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: const Text(
+                        'Swimming',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
+                    crossFadeState: swimmingCrossFadeState,
+                    firstCurve: Curves.bounceOut,
+                    secondCurve: Curves.easeIn,
+                    duration: const Duration(seconds: 1),
                   ),
                 ),
-              ),
-              InkWell(
-                onTap: () {
-                  OnSubmit.isDance = !OnSubmit.isDance;
-                  setState(() {});
-                },
-                child: Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 10,
-                  ),
-                  height: 50,
-                  width: 80,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: OnSubmit.isDance ? Colors.brown : Colors.white,
-                    border: Border.all(
-                      width: 2,
-                      color: Colors.black,
+                GestureDetector(
+                  onTap: () {
+                    OnSubmit.isDance = !OnSubmit.isDance;
+
+                    danceCrossFadeState = OnSubmit.isDance
+                        ? CrossFadeState.showSecond
+                        : CrossFadeState.showFirst;
+                    setState(() {});
+                  },
+                  child: AnimatedCrossFade(
+                    firstChild: Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      height: 50,
+                      width: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: const Text(
+                        'dance',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                  child: const Text(
-                    'dance',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    secondChild: Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      height: 50,
+                      width: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: const Text(
+                        'dance',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
+                    crossFadeState: danceCrossFadeState,
+                    firstCurve: Curves.bounceOut,
+                    secondCurve: Curves.easeIn,
+                    duration: const Duration(seconds: 1),
                   ),
                 ),
-              ),
-            ]),
+              ]),
+            ),
             Center(
               child: MaterialButton(
                 onPressed: () {
-                  OnSubmit.hobbyDetails();
-                  OnSubmit.selectedGender;
+                  OnSubmit.addHobbyDetails();
 
                   OnSubmit.isSubmitted = !OnSubmit.isSubmitted;
+                  opacityLevel = opacityLevel == 0 ? 1 : 0;
 
+                  OnSubmit.clearMethod();
                   setState(() {});
                 },
                 color: Colors.white,
@@ -277,45 +488,89 @@ class _GenderFormUiDemoState extends State<GenderFormUiDemo> {
                     side: OnSubmit.isSubmitted
                         ? const BorderSide(
                             color: Colors.brown,
-                            width: 3,
+                            width: 2,
                           )
                         : const BorderSide(),
                     borderRadius: const BorderRadius.all(Radius.circular(20))),
                 height: 80,
                 minWidth: 160,
-                child: const Text(
-                  'Submit',
-                  style: TextStyle(
-                    fontSize: 50,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
+                child: const Text.rich(
+                  TextSpan(
+                    text: 'Su',
+                    style: TextStyle(
+                        color: Colors.orange,
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold),
+                    children: [
+                      TextSpan(
+                        text: 'bm',
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                      TextSpan(
+                        text: 'it',
+                        style: TextStyle(color: Colors.green),
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
-            Expanded(
-              child: OnSubmit.isSubmitted
-                  ? Container(
-                      padding: const EdgeInsets.all(20),
-                      margin: const EdgeInsets.all(20),
-                      height: 50,
-                      width: 600,
-                      color: Colors.white,
-                      child: ListView.builder(
-                        itemCount: 1,
-                        itemBuilder: (context, index) {
-                          return Text(
-                            'Gender is ${OnSubmit.selectedGender} \n Hobby is ${OnSubmit.selectedHobbies}',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                          );
-                        },
+            const SizedBox(
+              height: 40,
+            ),
+            OnSubmit.isSubmitted
+                ? GestureDetector(
+                    onTap: () {
+                      setState(() {});
+                    },
+                    child: AnimatedOpacity(
+                      opacity: opacityLevel,
+                      duration: const Duration(seconds: 5),
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(20),
+                        height: 140,
+                        color: Colors.white60,
+                        child: ListView.builder(
+                          itemCount: 1,
+                          itemBuilder: (context, index) {
+                            return Text(
+                              ' Gender is :- ${OnSubmit.selectedGender} \n Hobby  is :- ${OnSubmit.selectedHobbies}',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            );
+                          },
+                        ),
                       ),
-                    )
-                  : const SizedBox(),
-            )
+                    ),
+                  )
+                : const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text.rich(
+                        TextSpan(
+                          text: 'There ',
+                          style: TextStyle(
+                            color: Colors.orange,
+                            fontSize: 35,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: "isn't ",
+                              style:
+                                  TextStyle(color: Colors.blue, fontSize: 30),
+                            ),
+                            TextSpan(
+                              text: 'data',
+                              style: TextStyle(color: Colors.green),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
           ],
         ),
       ),

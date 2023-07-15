@@ -371,19 +371,19 @@ class TikTacmethod {
 
 class OnSubmit {
   static String selectedGender = '';
-  static String male = 'male';
-  static String female = 'female';
+  static String male = 'male', female = 'female';
+
   static List<String> selectedHobbies = [];
 
-  static bool isCricket = false;
-  static bool isFootball = false;
-  static bool isCooking = false;
-  static bool isSwimming = false;
-  static bool isDance = false;
-  static bool isVisible = false;
+  static bool isCricket = false,
+      isFootball = false,
+      isCooking = false,
+      isSwimming = false,
+      isDance = false;
+
   static bool isSubmitted = false;
 
-  static void hobbyDetails() {
+  static void addHobbyDetails() {
     if (isCricket) {
       selectedHobbies.add('cricket');
     }
@@ -394,30 +394,18 @@ class OnSubmit {
       selectedHobbies.add('cooking');
     }
     if (isSwimming) {
-      selectedHobbies.add('swamming');
+      selectedHobbies.add('swimming');
     }
     if (isDance) {
       selectedHobbies.add('dance');
     }
-    if (isSubmitted == true) {
-      selectedHobbies.clear();
-      isCricket = false;
-      isFootball = false;
-      isCooking = false;
-      isSwimming = false;
-      isDance = false;
-      selectedGender = '';
-    }
   }
+
+  
 
   static void clearMethod() {
     if (isSubmitted == false) {
       selectedHobbies.clear();
-      isCricket = false;
-      isFootball = false;
-      isCooking = false;
-      isSwimming = false;
-      isDance = false;
     }
   }
 }

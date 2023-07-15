@@ -9,7 +9,7 @@ class AnimatedListUiDemo extends StatefulWidget {
 
 class _AnimatedListUiDemoState extends State<AnimatedListUiDemo> {
   final _items = [];
-  final GlobalKey<AnimatedListState> _key = GlobalKey();
+  final GlobalKey<AnimatedListState> _key = GlobalKey<AnimatedListState>();
   void _addItem() {
     _items.insert(0, "Item ${_items.length + 1}");
     _key.currentState!.insertItem(0, duration: const Duration(seconds: 1));

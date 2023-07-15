@@ -35,7 +35,7 @@ class _ScaleTransitionUiDemoState extends State<ScaleTransitionUiDemo>
         child: ScaleTransition(
           scale: _animation!,
           child: const FlutterLogo(
-            size: 300,
+            size: 100,
           ),
         ),
       ),
