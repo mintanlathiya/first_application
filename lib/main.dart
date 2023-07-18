@@ -1,4 +1,4 @@
-import 'package:first_application/animation_demo/positionedtransition.dart';
+import 'package:first_application/dialog_demo/simple_dialog_demo.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PositionTransitionUiDemo(),
+      home: SimpleDialogDemo(),
     );
   }
 }

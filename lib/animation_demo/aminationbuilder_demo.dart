@@ -26,17 +26,28 @@ class _AnimationBuilderDemoState extends State<AnimationBuilderDemo>
             animation: animationcontroller!,
             builder: (context, child) {
               print(animationcontroller!.value);
-              return Transform.rotate(
-                angle: -animationcontroller!.value * 20,
-                child: Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
+              return Stack(
+                children: [
+                  Transform.rotate(
+                    angle: -animationcontroller!.value * 20,
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      color: Colors.red,
+                    ),
+                  ),
+                  Transform.rotate(
+                    angle: animationcontroller!.value * 20,
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      color: Colors.yellow,
+                    ),
+                  ),
+                ],
               );
             }),
       ),
     );
   }
 }
-
