@@ -80,10 +80,11 @@ class _SimpleDialogDemoState extends State<SimpleDialogDemo> {
                       icon: const Icon(Icons.message),
                       iconColor: Colors.pinkAccent,
                       iconPadding: const EdgeInsets.all(15),
-                      insetPadding: const EdgeInsets.only(bottom: 50),
+                      insetPadding: const EdgeInsets.only(bottom: 50, top: 5),
                       scrollable: true,
                       shadowColor: Colors.black,
-                      shape: const BeveledRectangleBorder(),
+                      shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
                       titlePadding: const EdgeInsets.all(20),
                       titleTextStyle: const TextStyle(color: Colors.brown),
                     );
