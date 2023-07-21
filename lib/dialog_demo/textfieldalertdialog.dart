@@ -1,3 +1,4 @@
+import 'package:first_application/dialog_demo/textfieldalertdialog_contoller.dart';
 import 'package:flutter/material.dart';
 
 class SingleTextFieldAlertDialogDemo extends StatefulWidget {
@@ -10,398 +11,458 @@ class SingleTextFieldAlertDialogDemo extends StatefulWidget {
 
 class _SingleTextFieldAlertDialogDemoState
     extends State<SingleTextFieldAlertDialogDemo> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final GlobalKey<FormState> _formKey1 = GlobalKey<FormState>();
-  final TextEditingController _txtUserNameEditingController =
-      TextEditingController();
-  final TextEditingController _txtUpdateUserNameEditingController =
-      TextEditingController();
-  final TextEditingController _txtPasswordEditingController =
-      TextEditingController();
-  final TextEditingController _txtUpdatePasswordEditingController =
-      TextEditingController();
-  final TextEditingController _txtAgeEditingController =
-      TextEditingController();
-  final TextEditingController _txtUpdateAgeEditingController =
-      TextEditingController();
-  final TextEditingController _txtUrlEditingController =
-      TextEditingController();
   @override
   void dispose() {
-    _txtUserNameEditingController.dispose();
-    _txtUpdateUserNameEditingController.dispose();
-    _txtPasswordEditingController.dispose();
-    _txtUpdatePasswordEditingController.dispose();
-    _txtAgeEditingController.dispose();
-    _txtUrlEditingController.dispose();
-    _txtUpdateAgeEditingController.dispose();
+    TextAlertController.txtNameEditingController.dispose();
+    TextAlertController.txtSurNameEditingController.dispose();
+    TextAlertController.txtAgeEditingController.dispose();
+    TextAlertController.txtMobileEditingController.dispose();
+    TextAlertController.txtEmailEditingController.dispose();
+
     super.dispose();
   }
 
-  List<Map<String, dynamic>> userData = [];
-  bool isVisible = true;
-  bool isUpdate = false;
-  int selectedIndex = 0;
-  String gender = 'gender', male = 'male', feMale = 'feMale';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                controller: _txtUserNameEditingController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
+      body: Form(
+          key: TextAlertController.key,
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: TextAlertController.txtNameEditingController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Name',
+                    labelText: 'Name',
                   ),
-                  hintText: 'UserName',
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                controller: _txtPasswordEditingController,
-                decoration: InputDecoration(
-                    border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                    ),
-                    hintText: 'password',
-                    suffix: GestureDetector(
-                        onTap: () {
-                          isVisible = !isVisible;
-                          setState(() {});
-                        },
-                        child: Icon(isVisible
-                            ? Icons.visibility_off
-                            : Icons.visibility))),
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'enter password';
-                  } else if (value.length <= 10) {
-                    return 'Strong password';
-                  } else {
-                    return null;
-                  }
-                },
-                obscureText: isVisible,
-                obscuringCharacter: '*',
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                controller: _txtAgeEditingController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                  hintText: 'age',
+                const SizedBox(
+                  height: 10,
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                controller: _txtUrlEditingController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                TextFormField(
+                  controller: TextAlertController.txtSurNameEditingController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'SurName',
+                    labelText: 'SurName',
                   ),
-                  hintText: 'url',
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  const Text('Gender :  '),
-                  Radio(
-                    value: male,
-                    groupValue: gender,
-                    onChanged: (value) {
-                      gender = value!;
-                      setState(() {});
-                    },
+                const SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  controller: TextAlertController.txtUrlEditingController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Url',
+                    labelText: 'Url',
                   ),
-                  const Text('male'),
-                  Radio(
-                    value: feMale,
-                    groupValue: gender,
-                    onChanged: (value) {
-                      gender = value!;
-                      setState(() {});
-                    },
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  controller: TextAlertController.txtAgeEditingController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Age',
+                    labelText: 'Age',
                   ),
-                  const Text('feMale'),
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              MaterialButton(
-                onPressed: isUpdate
-                    ? () {
-                        userData[selectedIndex]['userName'] =
-                            _txtUserNameEditingController.text;
-                        userData[selectedIndex]['password'] =
-                            _txtPasswordEditingController.text;
-                        userData[selectedIndex]['age'] =
-                            _txtAgeEditingController.text;
-                        userData[selectedIndex]['url'] =
-                            _txtUrlEditingController.text;
-                        userData[selectedIndex]['gender'] = gender;
-
-                        isUpdate = false;
-                        clearController();
-                        setState(() {});
-                      }
-                    : () {
-                        if (_formKey.currentState!.validate()) {
-                          userData.add({
-                            'userName': _txtUserNameEditingController.text,
-                            'password': _txtPasswordEditingController.text,
-                            'age': _txtAgeEditingController.text,
-                            'url': _txtUrlEditingController.text,
-                            'gender': gender,
-                          });
-
-                          clearController();
-                        }
-
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  controller: TextAlertController.txtMobileEditingController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Mobile Number',
+                    labelText: 'Mobile Number',
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  controller: TextAlertController.txtEmailEditingController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'EmailId',
+                    labelText: 'EmailId',
+                  ),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Enter EmailId';
+                    } else if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}$')
+                        .hasMatch(value)) {
+                      return 'valied Email';
+                    } else {
+                      return null;
+                    }
+                  },
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    const Text('Gender :  '),
+                    const Text('male '),
+                    Radio(
+                      value: TextAlertController.male,
+                      groupValue: TextAlertController.gender,
+                      onChanged: (value) {
+                        TextAlertController.gender = value!;
                         setState(() {});
                       },
-                child: Text(isUpdate ? 'update' : 'submit',
-                    style: const TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                    ),
+                    const Text('feMale '),
+                    Radio(
+                      value: TextAlertController.feMale,
+                      groupValue: TextAlertController.gender,
+                      onChanged: (value) {
+                        TextAlertController.gender = value!;
+                        setState(() {});
+                      },
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                MaterialButton(
+                    onPressed: () {
+                      TextAlertController.addUser();
+                      TextAlertController.clearMethod();
+                      setState(() {});
+                    },
+                    child: RichText(
+                      text: const TextSpan(
+                          text: 'Su',
+                          style: TextStyle(fontSize: 30, color: Colors.orange),
+                          children: [
+                            TextSpan(
+                                text: 'bm',
+                                style: TextStyle(color: Colors.black)),
+                            TextSpan(
+                                text: 'it',
+                                style: TextStyle(color: Colors.green)),
+                          ]),
                     )),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              userData.isEmpty
-                  ? const Text('there is no data')
-                  : Expanded(
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return Dismissible(
-                            onDismissed: (direction) {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    title: const Text('delete dialog'),
-                                    actions: [
-                                      MaterialButton(
-                                        onPressed: () {
-                                          userData.removeAt(index);
-                                          Navigator.pop(context);
-
-                                          setState(() {});
-                                        },
-                                        child: const Text('delete'),
-                                      ),
-                                      MaterialButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-
-                                          setState(() {});
-                                        },
-                                        child: const Text('cancle'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-
-                              setState(() {});
-                            },
-                            key: UniqueKey(),
-                            child: GestureDetector(
+                TextAlertController.userData.isEmpty
+                    ? const Text('There is not data')
+                    : Expanded(
+                        child: ListView.builder(
+                          itemCount: TextAlertController.userData.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
                               onTap: () async {
-                                print(index);
-                                isUpdate = true;
-                                selectedIndex = index;
-                                _txtUpdateUserNameEditingController.text =
-                                    userData[selectedIndex]['userName'];
-                                _txtUpdatePasswordEditingController.text =
-                                    userData[selectedIndex]['password'];
-                                _txtUpdateAgeEditingController.text =
-                                    userData[selectedIndex]['age'];
-                                gender = userData[selectedIndex]['gender'];
+                                TextAlertController.selectedIndex = index;
+                                TextAlertController.onTapUserData();
 
                                 await showDialog(
                                   context: context,
-                                  builder: (context) => StatefulBuilder(
-                                    builder: (context, setState) {
-                                      return SimpleDialog(
-                                        title: const Text('update dialog'),
+                                  builder: (context) {
+                                    return StatefulBuilder(
+                                      builder: (context, setState) =>
+                                          SimpleDialog(
                                         children: [
                                           Form(
-                                            key: _formKey1,
-                                            child: Column(
-                                              children: [
-                                                TextFormField(
-                                                  controller:
-                                                      _txtUpdateUserNameEditingController,
-                                                ),
-                                                TextFormField(
-                                                  controller:
-                                                      _txtUpdatePasswordEditingController,
-                                                  validator: (value) {
-                                                    if (value!.isEmpty) {
-                                                      return 'enter password';
-                                                    } else if (value.length <=
-                                                        10) {
-                                                      return 'Strong password';
-                                                    } else {
-                                                      return null;
-                                                    }
-                                                  },
-                                                  obscureText: true,
-                                                  obscuringCharacter: '*',
-                                                ),
-                                                TextFormField(
-                                                  controller:
-                                                      _txtUpdateAgeEditingController,
-                                                ),
-                                                Row(
+                                              key:
+                                                  TextAlertController.keyUpdate,
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(10),
+                                                child: Column(
                                                   children: [
-                                                    const Text('Gender :  '),
-                                                    Radio(
-                                                      value: male,
-                                                      groupValue: gender,
-                                                      onChanged: (value) {
-                                                        gender = value!;
-                                                        setState(() {});
-                                                      },
+                                                    TextFormField(
+                                                      controller:
+                                                          TextAlertController
+                                                              .txtUpdateNameEditingController,
+                                                      decoration:
+                                                          const InputDecoration(
+                                                              border:
+                                                                  OutlineInputBorder(),
+                                                              hintText: 'Name'),
                                                     ),
-                                                    const Text('male'),
-                                                    Radio(
-                                                      value: feMale,
-                                                      groupValue: gender,
-                                                      onChanged: (value) {
-                                                        gender = value!;
-                                                        setState(() {});
-                                                      },
+                                                    const SizedBox(
+                                                      height: 5,
                                                     ),
-                                                    const Text('feMale'),
+                                                    TextFormField(
+                                                      controller:
+                                                          TextAlertController
+                                                              .txtUpdateSurnameEditingController,
+                                                      decoration:
+                                                          const InputDecoration(
+                                                              border:
+                                                                  OutlineInputBorder(),
+                                                              hintText:
+                                                                  'SurName'),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    TextFormField(
+                                                      controller:
+                                                          TextAlertController
+                                                              .txtUpdateUrlEditingController,
+                                                      decoration:
+                                                          const InputDecoration(
+                                                              border:
+                                                                  OutlineInputBorder(),
+                                                              hintText: 'Url'),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    TextFormField(
+                                                      controller:
+                                                          TextAlertController
+                                                              .txtUpdateAgeEditingController,
+                                                      decoration:
+                                                          const InputDecoration(
+                                                              border:
+                                                                  OutlineInputBorder(),
+                                                              hintText: 'Age'),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    TextFormField(
+                                                      controller:
+                                                          TextAlertController
+                                                              .txtUpdateMobileEditingController,
+                                                      decoration:
+                                                          const InputDecoration(
+                                                              border:
+                                                                  OutlineInputBorder(),
+                                                              hintText:
+                                                                  'Mobile Number'),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    TextFormField(
+                                                      controller:
+                                                          TextAlertController
+                                                              .txtUpdateEmailEditingController,
+                                                      validator: (value) {
+                                                        if (value!.isEmpty) {
+                                                          return 'Enter EmailId';
+                                                        } else if (!RegExp(
+                                                                r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}$')
+                                                            .hasMatch(value)) {
+                                                          return 'valied Email';
+                                                        } else {
+                                                          return null;
+                                                        }
+                                                      },
+                                                      decoration:
+                                                          const InputDecoration(
+                                                              border:
+                                                                  OutlineInputBorder(),
+                                                              hintText:
+                                                                  'EmailId'),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        const Text(
+                                                            'Gender :  '),
+                                                        const Text('male '),
+                                                        Radio(
+                                                          value:
+                                                              TextAlertController
+                                                                  .male,
+                                                          groupValue:
+                                                              TextAlertController
+                                                                  .gender,
+                                                          onChanged: (value) {
+                                                            TextAlertController
+                                                                    .gender =
+                                                                value!;
+                                                            setState(() {});
+                                                          },
+                                                        ),
+                                                        const Text('feMale '),
+                                                        Radio(
+                                                          value:
+                                                              TextAlertController
+                                                                  .feMale,
+                                                          groupValue:
+                                                              TextAlertController
+                                                                  .gender,
+                                                          onChanged: (value) {
+                                                            TextAlertController
+                                                                    .gender =
+                                                                value!;
+                                                            setState(() {});
+                                                          },
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        MaterialButton(
+                                                          onPressed: () {
+                                                            if (TextAlertController
+                                                                .keyUpdate
+                                                                .currentState!
+                                                                .validate()) {
+                                                              TextAlertController
+                                                                  .updateUserDetail();
+                                                              TextAlertController
+                                                                  .clearUpDateMethod();
+
+                                                              Navigator.pop(
+                                                                  context);
+                                                              setState(
+                                                                () {},
+                                                              );
+                                                            }
+                                                          },
+                                                          child: const Text(
+                                                              'Update'),
+                                                        ),
+                                                        MaterialButton(
+                                                          onPressed: () {
+                                                            Navigator.pop(
+                                                                context);
+                                                            setState(
+                                                              () {},
+                                                            );
+                                                          },
+                                                          child: const Text(
+                                                              'cancle'),
+                                                        ),
+                                                      ],
+                                                    )
                                                   ],
                                                 ),
-                                              ],
-                                            ),
+                                              ))
+                                        ],
+                                      ),
+                                    );
+                                  },
+                                );
+                                setState(() {});
+                              },
+                              child: Dismissible(
+                                key: UniqueKey(),
+                                onDismissed: (direction) {
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        title: const Text('are you sure?'),
+                                        actions: [
+                                          MaterialButton(
+                                            onPressed: () {
+                                              TextAlertController.userData
+                                                  .removeAt(index);
+                                              Navigator.pop(context);
+                                              setState(
+                                                () {},
+                                              );
+                                            },
+                                            child: const Text('Delete'),
                                           ),
-                                          Row(
-                                            children: [
-                                              MaterialButton(
-                                                onPressed: () {
-                                                  if (_formKey1.currentState!
-                                                      .validate()) 
-                                                      {
-                                                    userData[selectedIndex]
-                                                            ['userName'] =
-                                                        _txtUpdateUserNameEditingController
-                                                            .text;
-                                                    userData[selectedIndex]
-                                                            ['password'] =
-                                                        _txtUpdatePasswordEditingController
-                                                            .text;
-                                                    userData[selectedIndex]
-                                                            ['age'] =
-                                                        _txtUpdateAgeEditingController
-                                                            .text;
-                                                    userData[selectedIndex]
-                                                        ['gender'] = gender;
-                                                    isUpdate = false;
-                                                    _txtUpdateUserNameEditingController
-                                                        .clear();
-                                                    _txtUpdatePasswordEditingController
-                                                        .clear();
-                                                    _txtUpdateAgeEditingController
-                                                        .clear();
-                                                    gender = 'gender';
-                                                    Navigator.pop(context);
-                                                  }
-
-                                                  setState(() {});
-                                                },
-                                                child: const Text('update'),
-                                              ),
-                                              MaterialButton(
-                                                onPressed: () {
-                                                  Navigator.pop(context);
-
-                                                  setState(() {});
-                                                },
-                                                child: const Text('cancle'),
-                                              ),
-                                            ],
-                                          )
+                                          MaterialButton(
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                              setState(
+                                                () {},
+                                              );
+                                            },
+                                            child: const Text('cancle'),
+                                          ),
                                         ],
                                       );
                                     },
-                                  ),
-                                );
-                                // ).then((value) => setState(() {}));
-
-                                setState(() {});
-                              },
-                              child: Row(
-                                children: [
-                                  Column(
-                                    children: [
-                                      CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                          userData[index]['url'],
-                                        ),
+                                  );
+                                  setState(() {});
+                                },
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      width: double.infinity,
+                                      height: 120,
+                                      padding: const EdgeInsets.all(10),
+                                      decoration: const BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 189, 227, 244),
                                       ),
-                                    ],
-                                  ),
-                                  const SizedBox(width: 10),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'UserName : ${userData[index]['userName']}',
+                                      child: Column(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Column(
+                                                children: [
+                                                  CircleAvatar(
+                                                    backgroundImage:
+                                                        NetworkImage(
+                                                            TextAlertController
+                                                                .userData[index]
+                                                                .url!),
+                                                    radius: 40,
+                                                  ),
+                                                ],
+                                              ),
+                                              const SizedBox(
+                                                width: 10,
+                                              ),
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                      'Name : ${TextAlertController.userData[index].name!}'),
+                                                  Text(
+                                                      'SurName : ${TextAlertController.userData[index].surName!}'),
+                                                  Text(
+                                                      'Age : ${TextAlertController.userData[index].age!.toString()}'),
+                                                  Text(
+                                                      'Mobile Number : ${TextAlertController.userData[index].mobileNumber!.toString()}'),
+                                                  Text(
+                                                      'EmailId : ${TextAlertController.userData[index].emailId!}'),
+                                                  Text(
+                                                      'Gender : ${TextAlertController.userData[index].gender!}'),
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ],
                                       ),
-                                      Text(
-                                        'password : ${userData[index]['password']}',
-                                      ),
-                                      Text(
-                                        'Age : ${userData[index]['age'].toString()}',
-                                      ),
-                                      Text(
-                                        'Gender : ${userData[index]['gender']}',
-                                      ),
-                                    ],
-                                  )
-                                ],
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    const Divider(
+                                      height: 2,
+                                      color: Colors.black,
+                                      thickness: 3,
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          );
-                        },
-                        itemCount: userData.length,
+                            );
+                          },
+                        ),
                       ),
-                    ),
-            ],
-          ),
-        ),
-      ),
+              ],
+            ),
+          )),
     );
-  }
-
-  void clearController() {
-    _txtUserNameEditingController.clear();
-    _txtPasswordEditingController.clear();
-    _txtAgeEditingController.clear();
-    _txtUrlEditingController.clear();
-    gender = 'gender';
   }
 }
