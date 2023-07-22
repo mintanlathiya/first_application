@@ -5,6 +5,9 @@ class TextAlertController {
   static List<User> userData = [];
   static int selectedIndex = 0;
   static String gender = 'gender', male = 'male', feMale = 'feMale';
+  static bool isCricket = false, isSinging = false;
+  static List selectedHobbylist = [];
+  static double selectedSalary = 10000;
 
   static GlobalKey<FormState> key = GlobalKey<FormState>();
   static GlobalKey<FormState> keyUpdate = GlobalKey<FormState>();
@@ -42,6 +45,10 @@ class TextAlertController {
     txtEmailEditingController.clear();
     txtUrlEditingController.clear();
     gender = 'gender';
+    selectedHobbylist.clear();
+    isCricket = false;
+    isSinging = false;
+    selectedSalary = 10000;
   }
 
   static void clearUpDateMethod() {
@@ -52,6 +59,10 @@ class TextAlertController {
     txtUpdateEmailEditingController.clear();
     txtUpdateUrlEditingController.clear();
     gender = 'gender';
+    selectedHobbylist.clear();
+    isCricket = false;
+    isSinging = false;
+    selectedSalary = 10000;
   }
 
   static void addUser() {
@@ -65,6 +76,13 @@ class TextAlertController {
     }
 
     if (key.currentState!.validate()) {
+      if (isCricket == true) {
+        selectedHobbylist.add('Cricket');
+      }
+      if (isSinging == true) {
+        selectedHobbylist.add('Singing');
+      }
+
       userData.add(
         User.fromJson(
           {
@@ -75,6 +93,8 @@ class TextAlertController {
             'emailId': txtEmailEditingController.text,
             'gender': gender,
             'url': txtUrlEditingController.text,
+            'hobby': List.from(selectedHobbylist.map((e) => e)),
+            'salary': selectedSalary,
           },
         ),
       );
@@ -82,6 +102,12 @@ class TextAlertController {
   }
 
   static void updateUserDetail() {
+    if (isCricket == true) {
+      selectedHobbylist.add('Cricket');
+    }
+    if (isSinging == true) {
+      selectedHobbylist.add('Singing');
+    }
     userData[selectedIndex].name = txtUpdateNameEditingController.text;
     userData[selectedIndex].surName = txtUpdateSurnameEditingController.text;
     userData[selectedIndex].age = int.parse(txtUpdateAgeEditingController.text);
@@ -90,6 +116,8 @@ class TextAlertController {
     userData[selectedIndex].emailId = txtUpdateEmailEditingController.text;
     userData[selectedIndex].gender = gender;
     userData[selectedIndex].url = txtUpdateUrlEditingController.text;
+    userData[selectedIndex].hobby = List.from(selectedHobbylist.map((e) => e));
+    userData[selectedIndex].salary = selectedSalary;
   }
 
   static void onTapUserData() {
@@ -102,5 +130,14 @@ class TextAlertController {
     txtUpdateEmailEditingController.text = userData[selectedIndex].emailId!;
     gender = userData[selectedIndex].gender!;
     txtUrlEditingController.text = userData[selectedIndex].url!;
+    selectedHobbylist = userData[selectedIndex].hobby!.map((e) => e).toList();
+    if (userData[selectedIndex].hobby!.contains('Cricket')) {
+      isCricket = true;
+    }
+    if (userData[selectedIndex].hobby!.contains('Singing')) {
+      isSinging = true;
+    }
+    selectedHobbylist.clear();
+    selectedSalary = userData[selectedIndex].salary!;
   }
 }

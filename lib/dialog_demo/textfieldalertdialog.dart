@@ -133,6 +133,46 @@ class _SingleTextFieldAlertDialogDemoState
                 const SizedBox(
                   height: 10,
                 ),
+                Row(
+                  children: [
+                    const Text('Hobby : '),
+                    const Text('Cricket '),
+                    Checkbox(
+                      value: TextAlertController.isCricket,
+                      onChanged: (value) {
+                        TextAlertController.isCricket = value!;
+                        setState(() {});
+                      },
+                    ),
+                    const Text('Singing '),
+                    Checkbox(
+                      value: TextAlertController.isSinging,
+                      onChanged: (value) {
+                        TextAlertController.isSinging = value!;
+                        setState(() {});
+                      },
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    const Text('salary : '),
+                    Slider(
+                      value: TextAlertController.selectedSalary,
+                      onChanged: (value) {
+                        TextAlertController.selectedSalary = value;
+                        setState(() {});
+                      },
+                      divisions: 10,
+                      min: 10000,
+                      max: 50000,
+                      label: TextAlertController.selectedSalary.toString(),
+                    ),
+                  ],
+                ),
                 MaterialButton(
                     onPressed: () {
                       TextAlertController.addUser();
@@ -311,6 +351,64 @@ class _SingleTextFieldAlertDialogDemoState
                                                     ),
                                                     Row(
                                                       children: [
+                                                        const Text('Hobby : '),
+                                                        const Text('Cricket '),
+                                                        Checkbox(
+                                                          value:
+                                                              TextAlertController
+                                                                  .isCricket,
+                                                          onChanged: (value) {
+                                                            TextAlertController
+                                                                    .isCricket =
+                                                                value!;
+                                                            setState(() {});
+                                                          },
+                                                        ),
+                                                        const Text('Singing '),
+                                                        Checkbox(
+                                                          value:
+                                                              TextAlertController
+                                                                  .isSinging,
+                                                          onChanged: (value) {
+                                                            TextAlertController
+                                                                    .isSinging =
+                                                                value!;
+                                                            setState(() {});
+                                                          },
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        const Text('salary : '),
+                                                        Slider(
+                                                          value:
+                                                              TextAlertController
+                                                                  .selectedSalary,
+                                                          onChanged: (value) {
+                                                            TextAlertController
+                                                                    .selectedSalary =
+                                                                value;
+                                                            setState(() {});
+                                                          },
+                                                          divisions: 10,
+                                                          min: 10000,
+                                                          max: 50000,
+                                                          label:
+                                                              TextAlertController
+                                                                  .selectedSalary
+                                                                  .toString(),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    Row(
+                                                      children: [
                                                         MaterialButton(
                                                           onPressed: () {
                                                             if (TextAlertController
@@ -394,7 +492,7 @@ class _SingleTextFieldAlertDialogDemoState
                                   children: [
                                     Container(
                                       width: double.infinity,
-                                      height: 120,
+                                      height: 150,
                                       padding: const EdgeInsets.all(10),
                                       decoration: const BoxDecoration(
                                         color:
@@ -435,6 +533,10 @@ class _SingleTextFieldAlertDialogDemoState
                                                       'EmailId : ${TextAlertController.userData[index].emailId!}'),
                                                   Text(
                                                       'Gender : ${TextAlertController.userData[index].gender!}'),
+                                                  Text(
+                                                      'Hobby : ${TextAlertController.userData[index].hobby!.toString()}'),
+                                                  Text(
+                                                      'Salary : ${TextAlertController.userData[index].salary!}'),
                                                 ],
                                               )
                                             ],
