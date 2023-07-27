@@ -32,12 +32,15 @@ class _DatePickerDemoState extends State<DatePickerDemo> {
                 keyboardType: const TextInputType.numberWithOptions(),
                 initialDatePickerMode: DatePickerMode.year,
                 textDirection: TextDirection.ltr,
-              );
+              ).then((value) {
+                setState(() {});
+                return value;
+              });
               setState(() {});
             },
             child: const Text('show date picker'),
           ),
-          Text(selectedDate.toString()),
+          if (selectedDate != null) Text(selectedDate.toString()),
         ],
       ),
     );

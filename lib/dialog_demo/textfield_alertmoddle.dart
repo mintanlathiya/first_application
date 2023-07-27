@@ -11,7 +11,8 @@ class User {
     this.emailId,
     this.gender,
     this.url,
-    this.hobby,this.salary,
+    this.hobby,
+    this.salary,
   });
   factory User.fromJson(Map<String, dynamic> json) => User(
         name: json['name'],
@@ -21,8 +22,8 @@ class User {
         emailId: json['emailId'],
         gender: json['gender'],
         url: json['url'],
-        hobby: json['hobby'],
-          salary: json['salary'],
+        hobby: List.from(json['hobby'].map((e) => e)).toList(),
+        salary: json['salary'],
       );
 
   Map<String, dynamic> toJson() {
@@ -49,7 +50,7 @@ class User {
       data['url'] = url;
     }
     if (hobby != null) {
-      data['hobby'] = hobby;
+      data['hobby'] = List.from(hobby!.map((e) => e)).toList();
     }
     if (salary != null) {
       data['salary'] = salary;

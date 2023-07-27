@@ -17,8 +17,8 @@ class _SimpleDialogDemoState extends State<SimpleDialogDemo> {
           mainAxisSize: MainAxisSize.min,
           children: [
             MaterialButton(
-              onPressed: () {
-                showDialog(
+              onPressed: () async {
+                await showDialog(
                   barrierDismissible: false,
                   //useSafeArea: true,
                   context: context,

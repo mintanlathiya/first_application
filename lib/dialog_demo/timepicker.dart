@@ -27,12 +27,13 @@ class _ShowTimePickerDemoState extends State<ShowTimePickerDemo> {
                   hourLabelText: '60 min',
                   minuteLabelText: '60 sec',
                   orientation: Orientation.landscape,
+                  
                 );
                 setState(() {});
               },
               child: const Text('show time picker'),
             ),
-            Text(selecetedTime.toString()),
+            if (selecetedTime != null) Text(selecetedTime.toString()),
           ],
         ),
       ),
