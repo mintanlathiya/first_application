@@ -140,7 +140,4 @@ class TextAlertController {
     selectedHobbylist.clear();
     selectedSalary = userData[selectedIndex].salary!;
   }
-
-
-  
 }
