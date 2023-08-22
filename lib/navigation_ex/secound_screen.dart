@@ -20,7 +20,8 @@ class _SecoundScreenState extends State<SecoundScreen> {
               //     MaterialPageRoute(
               //       builder: (context) => const ThirdScreen(),
               //     ));
-              Navigator.pushNamed(context, '/thirdScreen');
+              //Navigator.pushNamed(context, '/thirdScreen');
+              Navigator.popAndPushNamed(context, '/thirdScreen');
             },
             child: const Text('Goto thirdscreen'),
           ),
@@ -29,6 +30,8 @@ class _SecoundScreenState extends State<SecoundScreen> {
             onPressed: () {
               //Navigator.pop(context);
               Navigator.pushNamed(context, '/');
+              // Navigator.pushAndRemoveUntil(
+              //     context, , ModalRoute.withName('/'));
             },
             child: const Text('Go back to firstscreen'),
           ),

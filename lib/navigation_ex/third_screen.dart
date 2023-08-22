@@ -15,8 +15,15 @@ class _ThirdScreenState extends State<ThirdScreen> {
         children: [
           ElevatedButton(
             onPressed: () {
-              Navigator.popUntil(context, ModalRoute.withName('/'));
-              // Navigator.pushNamed(context, '/');
+              //Navigator.popUntil(context, ModalRoute.withName('/'));
+              // Navigator.pushAndRemoveUntil(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (context) => const SecoundScreen(),
+              //     ),
+              //     ModalRoute.withName('/'));
+
+              Navigator.pushNamed(context, '/');
             },
             child: const Text('Go backto firstscreen'),
           ),

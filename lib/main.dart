@@ -1,4 +1,4 @@
-import 'package:first_application/navigation_ex/first_screen.dart';
+import 'package:first_application/data_passing_ex/datapassing1.dart';
 import 'package:first_application/navigation_ex/secound_screen.dart';
 import 'package:first_application/navigation_ex/third_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const FirstScreen(),
+      home: const DataPassingOne(),
       initialRoute: '/',
       routes: {
         '/secoundScreen': (context) => const SecoundScreen(),
