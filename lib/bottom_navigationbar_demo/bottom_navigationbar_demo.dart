@@ -74,6 +74,7 @@ class _BottomNavigationbarDemoState extends State<BottomNavigationbarDemo> {
             (selectedIndex = value);
             setState(() {});
           },
+          type: BottomNavigationBarType.fixed,
           currentIndex: selectedIndex,
           items: List.generate(
               navigationData.length,
@@ -88,7 +89,8 @@ class _BottomNavigationbarDemoState extends State<BottomNavigationbarDemo> {
                     ),
                     label: navigationData[index]['title'],
                   ))),
-      body: myScreens.elementAt(selectedIndex),
+      //body: myScreens.elementAt(selectedIndex),
+      body: myScreens[selectedIndex],
     );
   }
 }

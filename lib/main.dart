@@ -1,6 +1,4 @@
-import 'package:first_application/data_passing_ex/datapassing1.dart';
-import 'package:first_application/navigation_ex/secound_screen.dart';
-import 'package:first_application/navigation_ex/third_screen.dart';
+import 'package:first_application/bottomsheet_demo1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,14 +9,14 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const DataPassingOne(),
-      initialRoute: '/',
-      routes: {
-        '/secoundScreen': (context) => const SecoundScreen(),
-        '/thirdScreen': (context) => const ThirdScreen(),
-      },
+      home: BottomDemo(),
+      //initialRoute: '/',
+      // routes: {
+      //   '/secoundScreen': (context) => const SecoundScreen(),
+      //   '/thirdScreen': (context) => const ThirdScreen(),
+      // },
     );
   }
 }
